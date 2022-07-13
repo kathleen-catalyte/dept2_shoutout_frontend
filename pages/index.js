@@ -13,11 +13,13 @@ export default function Home() {
       {user ? (
         <>
           <p>{user.email}</p>
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <a href="/api/auth/logout">Logout</a>
         </> ) : (
-        <ul>
-          <li><a href="/api/auth/login">Login</a></li>
-        </ul>
+        <>
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a href="/api/auth/login">Login</a>
+        </>
       )}
     </div>
   )
