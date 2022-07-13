@@ -10,10 +10,13 @@ export default function Home() {
     <div className={styles.container}>
       <h1>Shoutout!</h1>
 
-      {user ? <p>{user.name} {user.email}</p> : (
+      {user ? (
+        <>
+          <p>{user.email}</p>
+          <a href="/api/auth/logout">Logout</a>
+        </> ) : (
         <ul>
           <li><a href="/api/auth/login">Login</a></li>
-          <li><a href="/api/auth/logout">Logout</a></li>
         </ul>
       )}
     </div>
