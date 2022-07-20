@@ -1,10 +1,12 @@
-import styles from '../styles/Home.module.css'
 import { useUser } from '@auth0/nextjs-auth0'
+import type { NextPage } from 'next'
 
-export default function Home() {
+import styles from '../styles/Home.module.css'
+
+const Home: NextPage = () => {
   const { user, error, isLoading } = useUser()
-  if (isLoading) return <div>Loading...</div>
-  if (error) return <div>{error.toString()}</div>
+  {isLoading && <p>Loading login info...</p>}
+  {error && <div>{error.toString()}</div>}
 
   return (
     <div className={styles.container}>
@@ -24,3 +26,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home
