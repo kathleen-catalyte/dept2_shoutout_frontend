@@ -1,8 +1,8 @@
 import { useUser } from '@auth0/nextjs-auth0'
 import type { NextPage } from 'next'
-import ShoutoutsTemp from '../components/shoutouts-temp'
+import ShoutoutsTemp from '@/components/shoutouts-temp'
 
-import styles from '../styles/Home.module.css'
+import styles from '@/styles/Home.module.css'
 
 const Home: NextPage = () => {
   const { user, error, isLoading } = useUser()
