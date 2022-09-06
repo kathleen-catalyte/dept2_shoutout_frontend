@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
 import { getAccessToken, withApiAuthRequired } from '@auth0/nextjs-auth0';
+import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default withApiAuthRequired(async function latestShoutouts(
   req: NextApiRequest,
