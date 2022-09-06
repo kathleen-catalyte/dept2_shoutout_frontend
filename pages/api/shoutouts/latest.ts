@@ -7,16 +7,14 @@ export default withApiAuthRequired(async function latestShoutouts(
   res: NextApiResponse
 ) {
   const { accessToken } = await getAccessToken(req, res, {});
-  const url = `${process.env.API_HOST}shoutouts/latest`
-
-  console.log(url)
+  const url = `${process.env.API_HOST}/shoutouts/latest`
 
   const response = await fetch(url, {
     headers: {
       authorization: `Bearer ${accessToken}`
     }
   });
-  console.log(response);
+
   const latest = await response.json();
   res.status(200).json(latest);
 });
