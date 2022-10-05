@@ -1,6 +1,7 @@
 import { useUser } from '@auth0/nextjs-auth0'
 import type { NextPage } from 'next'
 
+import Shoutouts from '@/components/shoutouts'
 import ShoutoutsTemp from '@/components/shoutouts-temp'
 import styles from '@/styles/Home.module.css'
 
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
           <p>{user.email}</p>
 
           <ShoutoutsTemp />
+          <Shoutouts/>
 
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <a href="/api/auth/logout">Logout</a>
