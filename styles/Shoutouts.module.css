@@ -1,0 +1,29 @@
+.shoutcontainer {
+    background-color:#4d4f54;
+    border-radius: 1rem;
+    width: 37.75rem;
+    height: 12.37rem;
+    text-align: center;
+    padding-top: .625rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .text {
+    color: white;
+    font-size: 1rem;
+  }
+
+  .hyper {
+    color: #9873ff;
+    font-size: 1rem;
+  }
+
+  .subtext {
+    color: #ffffff6a;
+    font-size: .625rem;
+  }
+  
+  .userName {
+    color: #9873ff;
+    font-size: .875rem;
+  }

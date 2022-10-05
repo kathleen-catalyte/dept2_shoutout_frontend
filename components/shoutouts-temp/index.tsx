@@ -9,7 +9,7 @@ const ShoutoutsTemp = () => {
 
   if (error) return <p>Something went wrong.</p>;
   if (!data) return <p>Hang tight...</p>;
-  // console.log(shoutOutData);
+  console.log(shoutOutData);
   return <div>Check your console for recent shoutouts</div>;
 };
 
