@@ -1,8 +1,8 @@
 import { faker } from '@faker-js/faker';
-import { NextApiRequest, NextApiResponse } from "next"
+import { NextApiResponse } from "next"
 
 
-const handler = (req: NextApiRequest, res: NextApiResponse) => {
+const handler = (res: NextApiResponse) => {
   res
     .status(200)
     .json([
