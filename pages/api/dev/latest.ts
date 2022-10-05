@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import { NextApiResponse } from "next"
 
 
-const handler = (res: NextApiResponse) => {
+const handler = ( req: NextApiResponse, res: NextApiResponse) => {
   res
     .status(200)
     .json([
