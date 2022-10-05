@@ -1,0 +1,45 @@
+.searchBox,
+.closeIcon,
+.searchWrapper {
+  position: relative;
+  padding: 1rem;
+}
+.searchWrapper {
+  width: 22.2rem;
+  margin: auto;
+}
+.searchBox {
+  width: 80%;
+  border: 0.1rem solid #ccc;
+  outline: 0;
+  border-radius: 0.5rem;
+  min-height: 3.5rem;
+}
+.searchBox:focus {
+  border: 0.1rem solid #5b24f2;
+  caret-color: #5b24f2;
+}
+
+.closeIcon {
+  border: 0rem;
+  padding: 0rem;
+  border: 0rem;
+  vertical-align: middle;
+}
+
+.closeIcon:after {
+  content: "X";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  z-index: 1;
+  right: 1.5rem;
+  top: 0rem;
+  bottom: 0rem;
+  margin: auto;
+  color: red;
+  font-weight: normal;
+  font-size: 1rem;
+  cursor: pointer;
+}
