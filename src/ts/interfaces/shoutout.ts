@@ -3,7 +3,7 @@ export interface Shoutout {
   text: string;
   createDate: string;
   recipients: BasicProfile[];
-  elements: Elements[];
+  elements: Element[];
   channel: Channel;
   author: BasicProfile;
 }
@@ -19,7 +19,7 @@ export interface BasicProfile {
   image512?: string;
 }
 
-export interface Elements {
+export interface Element {
   id: number;
   text: string;
   type: string;

@@ -5,7 +5,7 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
   res.status(200).json([
     {
       id: 1,
-      text: "hi. <@Beto> ",
+      text: "hi. <@Beto> " + faker.lorem.sentence(),
       createDate: faker.date.soon(),
       authorId: "1",
       recipients: [
@@ -23,16 +23,17 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
       elements: [
         {
           id: 1,
-          content: "hi",
+          text: "hi.",
           type: "text",
           employeeId: null,
         },
         {
           id: 2,
-          content: "Beto",
+          text: "Beto",
           type: "user",
           employeeId: "2",
         },
+        { id: 3, text: faker.lorem.sentence(), type: "text" },
       ],
       channel: {
         id: faker.lorem.sentence(),
@@ -44,7 +45,7 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
         email: faker.internet.email(),
         team: "DPUS",
         country: "US",
-        name: "Shouty",
+        name: "Chuck",
         image72: faker.image.avatar(),
         image192: faker.image.avatar(),
         image512: faker.image.avatar(),
@@ -70,13 +71,13 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
       elements: [
         {
           id: 1,
-          content: "hi",
+          text: "hi",
           type: "text",
           employeeId: null,
         },
         {
           id: 2,
-          content: "Beto",
+          text: "Beto",
           type: "user",
           employeeId: "2",
         },
@@ -91,7 +92,7 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
         email: faker.internet.email(),
         team: "DPUS",
         country: "US",
-        name: "Shouty",
+        name: "Annabelle",
         image72: faker.image.avatar(),
         image192: faker.image.avatar(),
         image512: faker.image.avatar(),
@@ -117,13 +118,13 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
       elements: [
         {
           id: 1,
-          content: "hi",
+          text: "hi",
           type: "text",
           employeeId: null,
         },
         {
           id: 2,
-          content: "Beto",
+          text: "Beto",
           type: "user",
           employeeId: "2",
         },

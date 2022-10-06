@@ -1,31 +1,48 @@
 .shoutcontainer {
-    background-color:#4d4f54;
-    border-radius: 1rem;
-    width: 37.75rem;
-    height: 12.37rem;
-    text-align: center;
-    padding-top: .625rem;
-    margin-bottom: 1.25rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  background-color: #ffffff1a;
+  border-radius: 1rem;
+  width: 37.75rem;
+  height: 12.37rem;
+  text-align: center;
+  padding-top: 0.625rem;
+  margin-bottom: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .text {
-    color: white;
-    font-size: 1rem;
-  }
+.text {
+  color: white;
+  font-size: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-align: justify;
+}
 
-  .hyper {
-    color: #9873ff;
-    font-size: 1rem;
-  }
+.hyper {
+  color: #9873ff;
+  font-size: 1rem;
+}
 
-  .subtext {
-    color: #ffffff6a;
-    font-size: .625rem;
-  }
-  
-  .userName {
-    color: #9873ff;
-    font-size: .875rem;
-  }
+.subtext {
+  color: #ffffff6a;
+  font-size: 0.625rem;
+  text-align: left;
+  margin-left: 2rem;
+}
+
+.userName {
+  color: #9873ff;
+  font-size: 0.875rem;
+  text-align: left;
+  margin-left: 2rem;
+}
+
+.icon {
+  background: linear-gradient(253.43deg, #9873ff, #5b24f2 100%);
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 3.125rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.625rem;
+}

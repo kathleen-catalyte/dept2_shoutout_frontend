@@ -1,4 +1,4 @@
-import { Shoutout } from "src/ts/interfaces/Shoutout";
+import { Element, Shoutout } from "src/ts/interfaces/shoutout";
 import useSWR from "swr";
 
 import fetch from "@/lib/fetch";
@@ -16,9 +16,13 @@ const Shoutouts = () => {
       {shoutOutData.map(function (d, idx) {
         return (
           <div className={styles.shoutcontainer} key={idx}>
-            <p className={styles.text}>{d.text}</p>
-            <p className={styles.userName}>{d.author.name}</p>
-                <p className={styles.subtext}>{`#${d.channel.id}`}</p>
+            <p className={styles.text}>
+              {d.elements.map((x, idx) => {
+                return <a key={idx}>{` ${ x.text }`}</a>;
+              })}
+            </p>
+            <p className={styles.userName}>{`@${d.author.name}`}</p>
+            <p className={styles.subtext}>{`#${d.channel.id}`}</p>
           </div>
         );
       })}
