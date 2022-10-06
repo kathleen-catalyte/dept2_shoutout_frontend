@@ -21,7 +21,7 @@
   caret-color: #5b24f2;
 }
 
-.closeIcon {
+/* .closeIcon {
   border: 0rem;
   padding: 0rem;
   border: 0rem;
@@ -29,7 +29,6 @@
 }
 
 .closeIcon:after {
-  content: "X";
   display: block;
   width: 1rem;
   height: 1rem;
@@ -45,15 +44,40 @@
   cursor: pointer;
 }
 
+.closeIcon > XMarkIcon {
+  color: #6a7078;
+  height: 1.4rem;
+} */
+
 .magnifyingGlassInactive {
-  filter: invert(44%) sepia(8%) saturate(496%) hue-rotate(175deg)
-    brightness(95%) contrast(82%);
+  color: #6a7078;
+  height: 1.4rem;
+  right: 1rem;
 }
 
 .magnifyingGlassWrapper {
   position: absolute;
   left: 2rem;
   top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.closeButton {
+  position: absolute;
+  right: 6rem;
+  height: 3rem;
+  width: 3rem;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.closeIcon {
+  color: #c82323;
+  height: 3.6rem;
+  top: 50%;
+  right: 0.8rem;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
