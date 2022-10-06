@@ -33,7 +33,7 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
           type: "user",
           employeeId: "2",
         },
-        { id: 3, text: faker.lorem.sentence(), type: "text" },
+        { id: 3, text: faker.lorem.paragraph(), type: "text" },
       ],
       channel: {
         id: faker.lorem.sentence(),

@@ -18,7 +18,7 @@ const Shoutouts = () => {
           <div className={styles.shoutcontainer} key={idx}>
             <p className={styles.text}>
               {d.elements.map((x, idx) => {
-                return <a key={idx}>{` ${ x.text }`}</a>;
+                return <a key={idx}>{` ${x.text}`}</a>;
               })}
             </p>
             <p className={styles.userName}>{`@${d.author.name}`}</p>
