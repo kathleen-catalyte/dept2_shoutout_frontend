@@ -16,6 +16,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.icon}></div>
       <h1 className={styles.title}>Shoutouts</h1>
       <p className={styles.subheader}>Keeping track Of DEPT&#174;&#39;s shoutouts</p>
 

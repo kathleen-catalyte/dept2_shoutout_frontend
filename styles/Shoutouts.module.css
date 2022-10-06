@@ -6,6 +6,8 @@
     text-align: center;
     padding-top: .625rem;
     margin-bottom: 1.25rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .text {
