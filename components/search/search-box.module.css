@@ -7,6 +7,7 @@
 .searchWrapper {
   width: 22.2rem;
   margin: auto;
+  position: relative;
 }
 .searchBox {
   width: 80%;
@@ -44,5 +45,15 @@
   cursor: pointer;
 }
 
-.MagnifyingGlassInactive {
+.magnifyingGlassInactive {
+  filter: invert(44%) sepia(8%) saturate(496%) hue-rotate(175deg)
+    brightness(95%) contrast(82%);
+}
+
+.magnifyingGlassWrapper {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }

@@ -13,13 +13,14 @@ const SearchBox = () => {
   return (
     <div className={styles.searchWrapper}>
       <form>
-        <Image
-          src={MagnifyingGlass}
-          alt=""
-          className={styles.magnifyingGlassInactive}
-        ></Image>
         <input type="text" className={styles.searchBox} />
-        {/* add the magnifying icon here */}
+        <div className={styles.magnifyingGlassWrapper}>
+          <Image
+            src={MagnifyingGlass}
+            alt=""
+            className={styles.magnifyingGlassInactive}
+          ></Image>
+        </div>
         <button className={styles.closeIcon} type="reset" />
       </form>
     </div>
