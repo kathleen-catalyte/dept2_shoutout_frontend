@@ -1,4 +1,4 @@
-.searchBox,
+.searchInput,
 .closeIcon,
 .searchWrapper {
   position: relative;
@@ -9,14 +9,18 @@
   margin: auto;
   position: relative;
 }
-.searchBox {
+.searchInput {
   width: 80%;
   border: 0.1rem solid #ccc;
   outline: 0;
   border-radius: 0.5rem;
   min-height: 3.5rem;
+  padding-left: 3rem;
+  font-size: 1rem;
 }
-.searchBox:focus {
+
+.searchInput:focus,
+.searchInputWithText {
   border: 0.1rem solid #5b24f2;
   caret-color: #5b24f2;
 }
@@ -55,6 +59,12 @@
   right: 1rem;
 }
 
+.magnifyingGlassActive {
+  color: #5b24f2;
+  height: 1.4rem;
+  right: 1rem;
+}
+
 .magnifyingGlassWrapper {
   position: absolute;
   left: 2rem;
@@ -65,19 +75,25 @@
 
 .closeButton {
   position: absolute;
-  right: 6rem;
-  height: 3rem;
-  width: 3rem;
+  right: 5.45rem;
+  height: 2.5rem;
+  width: 2.5rem;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
 }
 
 .closeIcon {
   color: #c82323;
-  height: 3.6rem;
+  height: 3.7rem;
   top: 50%;
-  right: 0.8rem;
+  right: 1rem;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.closeIcon:hover {
+  cursor: pointer;
 }
