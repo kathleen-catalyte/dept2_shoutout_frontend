@@ -16,13 +16,14 @@ const Shoutouts = () => {
       {shoutOutData.map(function (d, idx) {
         return (
           <div className={styles.shoutcontainer} key={idx}>
+            <div className={styles.icon}></div>
             <p className={styles.text}>
               {d.elements.map((x, idx) => {
                 return <a key={idx}>{` ${x.text}`}</a>;
               })}
             </p>
-            <p className={styles.userName}>{`@${d.author.name}`}</p>
-            <p className={styles.subtext}>{`#${d.channel.id}`}</p>
+            <span className={styles.userName}>{`@${d.author.name}`}</span>
+            <span className={styles.subtext}>{`#${d.channel.id}`}</span>
           </div>
         );
       })}
