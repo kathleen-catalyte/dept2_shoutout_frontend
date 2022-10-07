@@ -1,11 +1,8 @@
-import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/20/solid/";
+import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/solid/";
 import { ChangeEvent, useEffect, useState } from "react";
 
 import styles from "./search-box.module.css";
 
-// setstate of input
-// see previous
-// on click of x set textfield state to empty string
 /**
  * @name
  * @description
@@ -53,17 +50,18 @@ const SearchBox = () => {
         <input
           type="text"
           className={`${styles.searchInput} ${
-            inputValue !== "" && styles.searchInputWithText
+            (focused || inputValue.length >= 1) && styles.searchInputWithText
           }`}
           placeholder="Search for teammates"
           onFocus={handleFocus}
           onBlur={handleBlur}
           onChange={(e) => handleFieldChange(e)}
+          value={inputValue}
         />
         <div className={styles.magnifyingGlassWrapper}>
           <MagnifyingGlassIcon
             className={
-              focused
+              focused || inputValue.length >= 1
                 ? styles.magnifyingGlassActive
                 : styles.magnifyingGlassInactive
             }
@@ -73,7 +71,7 @@ const SearchBox = () => {
           <button
             className={styles.closeButton}
             type="reset"
-            onClick={() => handleFieldClear}
+            onClick={handleFieldClear}
           >
             <XMarkIcon className={styles.closeIcon} />
           </button>
