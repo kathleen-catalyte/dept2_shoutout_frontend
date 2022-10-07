@@ -4,8 +4,8 @@ import { ChangeEvent, useEffect, useState } from "react";
 import styles from "./search-box.module.css";
 
 /**
- * @name
- * @description
+ * @name SearchBox
+ * @description search box and search button components
  * @returns
  */
 const SearchBox = () => {
@@ -13,32 +13,29 @@ const SearchBox = () => {
   const [inputValue, setInputValue] = useState("");
 
   /**
-   * @name
-   * @description
-   * @returns
+   * @name handleFocus
+   * @description sets state of input box focus to true
    */
   const handleFocus = () => setFocused(true);
 
   /**
-   * @name
-   * @description
-   * @returns
+   * @name handleBlur
+   * @description sets state of input box to false
    */
   const handleBlur = () => setFocused(false);
 
   /**
-   * @name
-   * @description
-   * @returns
+   * @name handleFieldChange
+   * @param e change field input event
+   * @description sets input value to the text a user enters
    */
   const handleFieldChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
 
   /**
-   * @name
-   * @description
-   * @returns
+   * @name handleFieldClear
+   * @description sets state of input value to an empty string
    */
   const handleFieldClear = () => {
     setInputValue("");
@@ -48,7 +45,9 @@ const SearchBox = () => {
     <div className={styles.searchWrapper}>
       <form>
         <input
+          name="search field"
           type="text"
+          required
           className={`${styles.searchInput} ${
             (focused || inputValue.length >= 1) && styles.searchInputWithText
           }`}
@@ -69,8 +68,9 @@ const SearchBox = () => {
         </div>
         {focused || inputValue.length >= 1 ? (
           <button
-            className={styles.closeButton}
+            name="clear search button"
             type="reset"
+            className={styles.closeButton}
             onClick={handleFieldClear}
           >
             <XMarkIcon className={styles.closeIcon} />
@@ -78,6 +78,13 @@ const SearchBox = () => {
         ) : (
           ""
         )}
+        <button
+          name="submit search button"
+          type="submit"
+          className={styles.submitButton}
+        >
+          Search
+        </button>
       </form>
     </div>
   );

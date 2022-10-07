@@ -1,3 +1,13 @@
+@font-face {
+  font-family: Lora;
+  src: url("../../fonts/Inter/static/Inter-Regular.ttf");
+}
+
+.searchInput,
+.submitButton {
+  font-family: Inter, Helvetica, Arial, sans-serif;
+}
+
 .closeButton {
   position: absolute;
   right: 5.45rem;
@@ -61,6 +71,16 @@
   width: 22.2rem;
   margin: auto;
   position: relative;
+}
+
+.submitButton {
+  position: absolute;
+  background: linear-gradient(to right top, #5b24f2, #9873ff);
+  color: #ffffff;
+  border: none;
+  min-height: 3.5rem;
+  width: 20%;
+  cursor: pointer;
 }
 
 .closeIcon:hover {
