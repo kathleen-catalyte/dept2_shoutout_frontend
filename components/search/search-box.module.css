@@ -8,6 +8,12 @@
   src: url("../../fonts/Inter/static/Inter-SemiBold.ttf");
 }
 
+@property --a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 45deg;
+}
+
 .closeButton {
   position: absolute;
   right: 5.45rem;
@@ -86,28 +92,15 @@
   border-radius: 0.5rem;
 }
 
-/* .submitButtonActive::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 0.5rem;
-  z-index: -1;
-  background: linear-gradient(to bottom, #5b24f2, #9873ff);
-  transition: background 300ms ease-in-out;
-} */
-
 .submitButtonActive {
-  background-image: linear-gradient(45deg, #5b24f2, #9873ff);
-  transition: 1s background-image ease-in-out;
+  transition: --a 300ms;
+  background: linear-gradient(var(--a), #5b24f2, #9873ff);
   color: #ffffff;
   cursor: pointer;
 }
 
 .submitButtonActive:hover {
-  background-image: linear-gradient(180deg, #5b24f2, #9873ff);
+  --a: -180deg;
 }
 
 .submitButtonInactive {
