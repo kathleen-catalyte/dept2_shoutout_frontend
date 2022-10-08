@@ -47,7 +47,6 @@ const SearchBox = () => {
         <input
           name="search field"
           type="text"
-          required
           className={`${styles.searchInput} ${
             (focused || inputValue.length >= 1) && styles.searchInputWithText
           }`}
@@ -66,7 +65,7 @@ const SearchBox = () => {
             }
           />
         </div>
-        {focused || inputValue.length >= 1 ? (
+        {(focused && inputValue.length >= 1) || inputValue.length >= 1 ? (
           <button
             name="clear search button"
             type="reset"
@@ -78,13 +77,24 @@ const SearchBox = () => {
         ) : (
           ""
         )}
-        <button
-          name="submit search button"
-          type="submit"
-          className={styles.submitButton}
-        >
-          Search
-        </button>
+        {inputValue.length >= 1 ? (
+          <button
+            name="submit search button"
+            type="submit"
+            className={`${styles.submitButton} ${styles.submitButtonActive}`}
+          >
+            Search
+          </button>
+        ) : (
+          <button
+            name="submit search button"
+            type="submit"
+            disabled
+            className={`${styles.submitButton} ${styles.submitButtonInactive}`}
+          >
+            Search
+          </button>
+        )}
       </form>
     </div>
   );
