@@ -1,5 +1,5 @@
 import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/solid/";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, createRef, useEffect, useState } from "react";
 
 import styles from "./search-box.module.css";
 
@@ -11,6 +11,7 @@ import styles from "./search-box.module.css";
 const SearchBox = () => {
   const [focused, setFocused] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const inputRef = createRef<HTMLInputElement>();
 
   /**
    * @name handleFocus
@@ -39,6 +40,7 @@ const SearchBox = () => {
    */
   const handleFieldClear = () => {
     setInputValue("");
+    inputRef.current?.focus();
   };
 
   return (
@@ -55,6 +57,7 @@ const SearchBox = () => {
           onBlur={handleBlur}
           onChange={(e) => handleFieldChange(e)}
           value={inputValue}
+          ref={inputRef}
         />
         <div className={styles.magnifyingGlassWrapper}>
           <MagnifyingGlassIcon
