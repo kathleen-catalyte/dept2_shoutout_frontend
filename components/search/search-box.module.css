@@ -104,6 +104,10 @@
   --a: -180deg;
 }
 
+.submitButtonActive:active {
+  background: #340f99;
+}
+
 .submitButtonInactive {
   background-color: #e3e5e8;
   color: #6a7078;
