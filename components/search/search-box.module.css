@@ -93,6 +93,7 @@
 }
 
 .submitButtonActive {
+  --a: 45deg;
   transition: --a 300ms;
   background: linear-gradient(var(--a), #5b24f2, #9873ff);
   color: #ffffff;
