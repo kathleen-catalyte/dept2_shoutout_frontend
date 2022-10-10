@@ -1,7 +1,9 @@
-import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/solid/";
-import { ChangeEvent, createRef, useEffect, useState } from "react";
+import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/solid/';
+import Link from 'next/link';
+import { ChangeEvent, createRef, useEffect, useState } from 'react';
+import useSWR from 'swr';
 
-import styles from "./search-box.module.css";
+import styles from './search-box.module.css';
 
 /**
  * @name SearchBox
@@ -10,7 +12,7 @@ import styles from "./search-box.module.css";
  */
 const SearchBox = () => {
   const [focused, setFocused] = useState(false);
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState('');
   const inputRef = createRef<HTMLInputElement>();
 
   /**
@@ -39,20 +41,27 @@ const SearchBox = () => {
    * @description sets state of input value to an empty string
    */
   const handleFieldClear = () => {
-    setInputValue("");
+    setInputValue('');
     inputRef.current?.focus();
+  };
+
+  /**
+   *
+   */
+  const handleSubmit = () => {
+    // add query here?
   };
 
   return (
     <div className={styles.searchWrapper}>
       <form>
         <input
-          name="search field"
-          type="text"
+          name='search field'
+          type='text'
           className={`${styles.searchInput} ${
             (focused || inputValue.length >= 1) && styles.searchInputWithText
           }`}
-          placeholder="Search for teammates"
+          placeholder='Search for teammates'
           onFocus={handleFocus}
           onBlur={handleBlur}
           onChange={(e) => handleFieldChange(e)}
@@ -68,30 +77,32 @@ const SearchBox = () => {
             }
           />
         </div>
-        {(focused && inputValue.length >= 1) || inputValue.length >= 1 ? (
+        {inputValue.length >= 1 ? (
           <button
-            name="clear search button"
-            type="reset"
+            name='clear search button'
+            type='reset'
             className={styles.closeButton}
             onClick={handleFieldClear}
           >
             <XMarkIcon className={styles.closeIcon} />
           </button>
         ) : (
-          ""
+          ''
         )}
         {inputValue.length >= 1 ? (
-          <button
-            name="submit search button"
-            type="submit"
-            className={`${styles.submitButton} ${styles.submitButtonActive}`}
-          >
-            Search
-          </button>
+          <Link href='/search-results/'>
+            <button
+              name='submit search button'
+              type='submit'
+              className={`${styles.submitButton} ${styles.submitButtonActive}`}
+            >
+              Search
+            </button>
+          </Link>
         ) : (
           <button
-            name="submit search button"
-            type="submit"
+            name='submit search button'
+            type='submit'
             disabled
             className={`${styles.submitButton} ${styles.submitButtonInactive}`}
           >
