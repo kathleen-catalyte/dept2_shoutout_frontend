@@ -18,15 +18,18 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <div className={styles.icon}></div>
       <h1 className={styles.title}>Shoutouts</h1>
-      <p className={styles.subheader}>Keeping track Of DEPT&#174;&#39;s shoutouts</p>
+      <p className={styles.subheader}>
+        Keeping track Of DEPT&#174;&#39;s shoutouts
+      </p>
 
       {user ? (
         <>
-          <p>{`Remove Me Plz: ${user.email}`}</p>
           <Shoutouts />
 
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-          <a href="/api/auth/logout">Logout</a>
+          <a className={styles.logout} href="/api/auth/logout">
+            Logout
+          </a>
         </>
       ) : (
         <>

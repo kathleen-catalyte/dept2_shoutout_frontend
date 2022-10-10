@@ -10,13 +10,12 @@ const Shoutouts = () => {
 
   if (error) return <p>Something went wrong.</p>;
   if (!data) return <p>Hang tight...</p>;
-  console.log(shoutOutData);
+  console.log(shoutOutData.length);
   return (
     <div>
       {shoutOutData.map(function (d, idx) {
         return (
           <div className={styles.shoutcontainer} key={idx}>
-            <div className={styles.icon}></div>
             <p className={styles.text}>
               {d.elements.map((x, idx) => {
                 return <a key={idx}>{` ${x.text}`}</a>;
@@ -27,6 +26,7 @@ const Shoutouts = () => {
           </div>
         );
       })}
+      
     </div>
   );
 };
