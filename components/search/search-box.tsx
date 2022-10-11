@@ -1,7 +1,8 @@
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/solid/';
-import Link from 'next/link';
-import { ChangeEvent, createRef, useEffect, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 import useSWR from 'swr';
+
+import fetch from '@/lib/fetch';
 
 import styles from './search-box.module.css';
 
@@ -13,7 +14,7 @@ import styles from './search-box.module.css';
 const SearchBox = () => {
   const [focused, setFocused] = useState(false);
   const [inputValue, setInputValue] = useState('');
-  const inputRef = createRef<HTMLInputElement>();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   /**
    * @name handleFocus
@@ -48,13 +49,26 @@ const SearchBox = () => {
   /**
    *
    */
-  const handleSubmit = () => {
-    // add query here?
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (inputRef.current !== null) {
+      const searchQuery: string = inputRef.current.value;
+      fetch(`api/profile/`)
+        // fetch(`api/profile/search?name=${searchQuery}&email=${searchQuery}`)
+        //'/api/profile/' + new URLSearchParams({ searchQuery: searchQueryValue })
+        .then((response) => response.json())
+        .then((response) => console.log(response))
+        .then((data) => console.log(data));
+    }
+    // make fetch request to proxy api get data and error (don't think I can use SWR for this)
+    // store data
+    // once data is stored, use router to push to search-results page (declare useRouter above)
+    // on search-results map out the data
   };
 
   return (
     <div className={styles.searchWrapper}>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           name='search field'
           type='text'
@@ -90,15 +104,13 @@ const SearchBox = () => {
           ''
         )}
         {inputValue.length >= 1 ? (
-          <Link href='/search-results/'>
-            <button
-              name='submit search button'
-              type='submit'
-              className={`${styles.submitButton} ${styles.submitButtonActive}`}
-            >
-              Search
-            </button>
-          </Link>
+          <button
+            name='submit search button'
+            type='submit'
+            className={`${styles.submitButton} ${styles.submitButtonActive}`}
+          >
+            Search
+          </button>
         ) : (
           <button
             name='submit search button'

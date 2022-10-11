@@ -1,15 +1,15 @@
 @font-face {
   font-family: Inter-Regular;
-  src: url("../../fonts/Inter/static/Inter-Regular.ttf");
+  src: url('../../fonts/Inter/static/Inter-Regular.ttf');
 }
 
 @font-face {
   font-family: Inter-SemiBold;
-  src: url("../../fonts/Inter/static/Inter-SemiBold.ttf");
+  src: url('../../fonts/Inter/static/Inter-SemiBold.ttf');
 }
 
 @property --a {
-  syntax: "<angle>";
+  syntax: '<angle>';
   inherits: false;
   initial-value: 45deg;
 }
@@ -38,14 +38,12 @@
 
 .magnifyingGlassInactive {
   color: #6a7078;
-  height: 1.4rem;
-  right: 1rem;
+  height: 1.5rem;
 }
 
 .magnifyingGlassActive {
   color: #5b24f2;
-  height: 1.4rem;
-  right: 1rem;
+  height: 1.5rem;
 }
 
 .magnifyingGlassWrapper {
@@ -66,7 +64,7 @@
 .searchInput {
   font-family: Inter-Regular, Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  width: 16.15rem;
+  width: 16.2rem;
   border: 0.1rem solid #ccc;
   outline: 0;
   border-radius: 0.5rem;
@@ -87,8 +85,8 @@
   position: absolute;
   border: none;
   min-height: 3.5rem;
-  width: 6.25rem;
-  margin-left: 0.7rem;
+  width: 6.45rem;
+  margin-left: 0.62rem;
   border-radius: 0.5rem;
 }
 
