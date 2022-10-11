@@ -3,7 +3,12 @@ body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif, Inter;
+  background-color: black;
+  background: url('../pictures/26.svg') top no-repeat, black repeat;
+  background-size: 100%;
+  color:white;
+
 }
 
 a {
