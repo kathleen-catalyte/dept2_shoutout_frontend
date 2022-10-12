@@ -2,6 +2,7 @@ export interface Shoutout {
   id: string;
   text: string;
   createDate: string;
+  authorId: string;
   recipients: BasicProfile[];
   elements: Element[];
   channel: Channel;

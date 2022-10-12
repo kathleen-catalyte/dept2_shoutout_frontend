@@ -1,59 +1,48 @@
 import { faker } from '@faker-js/faker';
-import { NextApiResponse } from "next"
+import { NextApiRequest, NextApiResponse } from 'next';
+import { BasicProfile } from 'src/ts/interfaces/shoutout';
 
+import shoutouts from '../data-set';
 
-const handler = (req: NextApiResponse, res: NextApiResponse) => {
+/**
+ * @name handler
+ * @param req
+ * @param res
+ * @description
+ */
+const handler = (req: NextApiRequest, res: NextApiResponse) => {
+  // create an array of data based on Nat's
+  const dataSet = shoutouts;
   // grab the query from the url
+  const queriedName: string = req.query.name as string;
+  const queriedEmail: string = req.query.email as string;
+  // create response array to add matches to
+  let responseArray: BasicProfile[] = [];
   // loop through the array to see if it has possible matches
-  // if it has a possible match add that to the res.status(200).json([])
-  res
-    .status(200)
-    .json([
-      {
-        id: 1,
-        text: "hi <@Beto> ",
-        createDate: faker.date.soon(),
-        authorId: "1",
-        recipients: [{
-          employeeId: "2",
-          email: faker.internet.email(),
-          team: "DPUS",
-          country: "US",
-          name: "Beto",
-          image72: faker.image.avatar(),
-          image192: faker.image.avatar(),
-          image512: faker.image.avatar()
-        }],
-        elements:
-          [{
-            id: 1,
-            content: "hi",
-            type: "text",
-            employeeId: null
-          }, {
-            id: 2,
-            content: "Beto",
-            type: "user",
-            employeeId: "2"
-          }]
-        ,
-        channel: {
-          id: faker.lorem.sentence(),
-          slackId: faker.datatype.uuid(),
-          name: faker.name.firstName()
-        },
-        author: {
-          employeeId: 1,
-          email: faker.internet.email(),
-          team: "DPUS",
-          country: "US",
-          name: "Shouty",
-          image72: faker.image.avatar(),
-          image192: faker.image.avatar(),
-          image512: faker.image.avatar()
-        }
-      }
-    ])
-}
+  dataSet.forEach((shoutout) => {
+    const recipientsDataSet = shoutout.recipients;
 
-export default handler
+    recipientsDataSet.forEach((recipient) => {
+      if (
+        (recipient.name.includes(queriedName) ||
+          recipient.email.includes(queriedEmail)) &&
+        !responseArray.some((profile) => profile.name === recipient.name)
+      ) {
+        // push matching recipient to the responseArray
+        responseArray.push(recipient);
+      }
+    });
+
+    if (
+      shoutout.author.name.includes(queriedName) ||
+      (shoutout.author.email.includes(queriedEmail) &&
+        !responseArray.some((profile) => profile.name === shoutout.author.name))
+    ) {
+      responseArray.push(shoutout.author);
+    }
+  });
+
+  return res.status(200).json(responseArray);
+};
+
+export default handler;
