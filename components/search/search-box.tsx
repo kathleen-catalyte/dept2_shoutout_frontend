@@ -1,6 +1,5 @@
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/solid/';
 import { ChangeEvent, useRef, useState } from 'react';
-import useSWR from 'swr';
 
 import fetch from '@/lib/fetch';
 
@@ -49,16 +48,14 @@ const SearchBox = () => {
   /**
    *
    */
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (inputRef.current !== null) {
       const searchQuery: string = inputRef.current.value;
-      fetch(`api/profile/`)
-        // fetch(`api/profile/search?name=${searchQuery}&email=${searchQuery}`)
-        //'/api/profile/' + new URLSearchParams({ searchQuery: searchQueryValue })
-        .then((response) => response.json())
-        .then((response) => console.log(response))
-        .then((data) => console.log(data));
+      const response = await fetch(
+        `api/profile/search?name=${searchQuery}&email=${searchQuery}`
+      );
+      console.log(response);
     }
     // make fetch request to proxy api get data and error (don't think I can use SWR for this)
     // store data

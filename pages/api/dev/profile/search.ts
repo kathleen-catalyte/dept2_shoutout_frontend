@@ -2,7 +2,10 @@ import { faker } from '@faker-js/faker';
 import { NextApiResponse } from "next"
 
 
-const handler = ( req: NextApiResponse, res: NextApiResponse) => {
+const handler = (req: NextApiResponse, res: NextApiResponse) => {
+  // grab the query from the url
+  // loop through the array to see if it has possible matches
+  // if it has a possible match add that to the res.status(200).json([])
   res
     .status(200)
     .json([
