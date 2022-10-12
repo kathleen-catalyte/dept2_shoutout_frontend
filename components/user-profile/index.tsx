@@ -17,7 +17,6 @@ const UserProfile = (id: any) => {
     const { data, error } = useSWR(`/api/profile/${id}`, fetch)
     const profileData = (data as unknown) as FullProfile
     const [tabIndex, setTabIndex] = useState(0);
-    console.log(profileData)
 
     const handleTabChange = (event: any, newTabIndex: number) => {
         setTabIndex(newTabIndex);
@@ -35,11 +34,13 @@ const UserProfile = (id: any) => {
     }
 
     if (error) return <p>Something went wrong.</p>
-    if (!data) return <p>Hang tight...</p>
+    //Here we might reroute depending on team thoughts
+    if (typeof profileData == "undefined") return <p>Hang tight...</p>
+    if (profileData.statusCode) return <p>Unauthorized.</p>
     return (
         <div>
             <div className={styles.profilePageContainer}>
-                <span className={styles.backButton} onClick={BackToHome}>
+                <span data-testid="back" className={styles.backButton} onClick={BackToHome}>
                     <a className={styles.hoverbutton}>
                         <ArrowSmallLeftIcon className={styles.arrowIcon} />
                         <span className={styles.backToShoutOut}>Back to shoutouts</span>

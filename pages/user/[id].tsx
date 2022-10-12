@@ -13,6 +13,8 @@ const Home: NextPage = () => {
     const router = useRouter()
     const { id } = router.query
 
+    if (error) return <p>Something went wrong.</p>
+
     return (
         <div className={styles.container}>
 

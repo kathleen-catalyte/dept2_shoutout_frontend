@@ -10,5 +10,6 @@ export interface FullProfile {
     image192?: string,
     image512?: string,
     shoutoutsGiven: Shoutout[],
-    shoutoutsReceived: Shoutout[]
+    shoutoutsReceived: Shoutout[],
+    statusCode?: number
 }
