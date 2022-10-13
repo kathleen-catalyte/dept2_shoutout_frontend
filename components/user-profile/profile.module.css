@@ -6,7 +6,7 @@
 }
 .profilePageContainer{
     color:white;
-    width: 38rem;
+    width: 38.5rem;
     display: flex;
     height: 100vh;
     flex-direction: column;
@@ -15,19 +15,29 @@
     padding-top: 10%;
 }
 .arrowIcon{
-    height: 13px;
-    width: 16px;
+    height: 16px;
+    width: 18px;
     font-weight: 199;
+    color:#6A7078;
+    grid-area: 1 / 1 / 2 / 2;
+    position: relative;
+    top: 2.5px;
 }
 .backToShoutOut{
     padding-left: 10px;
     color: white;
     font-family: inter;
+    grid-area: 1 / 2 / 2 / 3; 
 }
 .backButton{
     padding-top: 10%;
     position: relative;
     width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: .5fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
 .hoverbutton:hover{
     cursor: pointer;
@@ -38,11 +48,13 @@
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    
 }
 .picture{
+    position: relative;
     margin:0 auto;
-    width: 100px;
-    height: 100px;
+    width: 5.188rem;
+    height: 5rem;
     border: 3px solid white;
     border-radius: 50%;
 }

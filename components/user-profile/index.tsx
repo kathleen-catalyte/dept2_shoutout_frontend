@@ -40,12 +40,12 @@ const UserProfile = (id: any) => {
     return (
         <div>
             <div className={styles.profilePageContainer}>
-                <span data-testid="back" className={styles.backButton} onClick={BackToHome}>
+                <p data-testid="back" className={styles.backButton} onClick={BackToHome}>
                     <a className={styles.hoverbutton}>
                         <ArrowSmallLeftIcon className={styles.arrowIcon} />
                         <span className={styles.backToShoutOut}>Back to shoutouts</span>
                     </a>
-                </span>
+                </p>
                 <div className={styles.profilePicture}>
 
                     {profileData.image192 ?
@@ -53,7 +53,7 @@ const UserProfile = (id: any) => {
                             <ProfilePicture picture={profileData.image192} /> </div> : null}
 
                     <a className={styles.name}>@{profileData.name}</a>
-                    <div style={{ 'paddingTop': '3%' }}> <UsersIcon style={{ "height": '20px', 'paddingLeft': '2%', 'paddingRight': '.3%' }} /><a>{profileData.team}</a><MapIcon style={{ "height": '20px', 'paddingLeft': '2%', 'paddingRight': '.3%' }} /><a>{profileData.country}</a></div>
+                    <div style={{ 'paddingTop': '3%' }}> <UsersIcon style={{ "height": '20px', 'paddingLeft': '2%', 'paddingRight': '.3%', 'position': 'relative', "top": '2.5px' }} /><a style={{ 'paddingLeft': '6px' }}>{profileData.team}</a><MapIcon style={{ "height": '20px', 'paddingLeft': '30px', 'paddingRight': '.3%', 'position': 'relative', "top": '2.5px' }} /><a style={{ 'paddingLeft': '6px' }}>{profileData.country}</a></div>
 
                 </div>
                 <div className={styles.shoutoutsContainer}>
