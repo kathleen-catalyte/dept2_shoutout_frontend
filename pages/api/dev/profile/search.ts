@@ -10,55 +10,64 @@ import { BasicProfile, Shoutout } from 'src/ts/interfaces/shoutout';
  */
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
   // create an array of data based on Nat's
-  const dataSet: Shoutout[] = [
-    {
-      id: '1',
-      text: 'hi <@Beto> ',
-      createDate: faker.date.soon().toDateString(),
-      authorId: '1',
-      recipients: [
-        {
-          employeeId: '2',
+
+  const generateShoutouts = () => {
+    let shoutouts = [];
+
+    for (let i = 1; i < 150; i++) {
+      shoutouts.push({
+        id: faker.random.numeric().toString(),
+        text: faker.random.words(16),
+        createDate: faker.date.soon().toDateString(),
+        authorId: faker.random.numeric().toString(),
+        recipients: [
+          {
+            employeeId: faker.random.numeric().toString(),
+            email: faker.internet.email(),
+            team: 'DPUS',
+            country: 'US',
+            name: faker.name.fullName(),
+            image72: faker.image.avatar(),
+            image192: faker.image.avatar(),
+            image512: faker.image.avatar(),
+          },
+        ],
+        elements: [
+          {
+            id: 1,
+            text: 'Shoutouts to',
+            type: 'text',
+            employeeId: null,
+          },
+          {
+            id: 2,
+            text: faker.name.fullName(),
+            type: 'user',
+            employeeId: faker.random.numeric().toString(),
+          },
+        ],
+        channel: {
+          id: faker.lorem.sentence(),
+          slackId: faker.datatype.uuid(),
+          name: faker.name.firstName(),
+        },
+        author: {
+          employeeId: faker.random.numeric().toString(),
           email: faker.internet.email(),
           team: 'DPUS',
           country: 'US',
-          name: 'Beto',
+          name: faker.name.fullName(),
           image72: faker.image.avatar(),
           image192: faker.image.avatar(),
           image512: faker.image.avatar(),
         },
-      ],
-      elements: [
-        {
-          id: 1,
-          text: 'hi',
-          type: 'text',
-          employeeId: null,
-        },
-        {
-          id: 2,
-          text: 'Beto',
-          type: 'user',
-          employeeId: '2',
-        },
-      ],
-      channel: {
-        id: faker.lorem.sentence(),
-        slackId: faker.datatype.uuid(),
-        name: faker.name.firstName(),
-      },
-      author: {
-        employeeId: '1',
-        email: faker.internet.email(),
-        team: 'DPUS',
-        country: 'US',
-        name: 'Shouty',
-        image72: faker.image.avatar(),
-        image192: faker.image.avatar(),
-        image512: faker.image.avatar(),
-      },
-    },
-  ];
+      });
+    }
+
+    return shoutouts;
+  };
+
+  const dataSet: Shoutout[] = generateShoutouts();
 
   // grab the query from the url
   const queriedName: string = (req.query.name as string).toLowerCase();
@@ -71,6 +80,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
 
     recipientsDataSet.forEach((recipient) => {
       if (
+        recipient.name &&
         (recipient.name.toLowerCase().includes(queriedName) ||
           recipient.email.includes(queriedEmail)) &&
         !responseArray.some((profile) => profile.name === recipient.name)
@@ -84,7 +94,8 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     if (
-      shoutout.author.name.toLowerCase().includes(queriedName) ||
+      (shoutout.author.name &&
+        shoutout.author.name.toLowerCase().includes(queriedName)) ||
       (shoutout.author.email.includes(queriedEmail) &&
         !responseArray.some((profile) => profile.name === shoutout.author.name))
     ) {
