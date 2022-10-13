@@ -59,7 +59,8 @@ const SearchBox = () => {
       const response = await fetch(
         `api/profile/search?name=${searchQuery}&email=${searchQuery}`
       );
-      router.push('/search-results/', response);
+      localStorage.setItem('profileSearchResults', JSON.stringify(response));
+      router.push('/search-results/');
     }
     // once data is stored, use router to push to search-results page (declare useRouter above)
     // on search-results map out the data

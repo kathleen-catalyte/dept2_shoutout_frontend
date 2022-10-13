@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { BasicProfile, Shoutout } from 'src/ts/interfaces/shoutout';
+import { BasicProfile, Shoutout } from 'ts/interfaces';
 
 /**
  * @name handler
