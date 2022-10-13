@@ -1,5 +1,17 @@
+@font-face {
+  font-family: Inter-Regular;
+  src: url('../fonts/Inter/static/Inter-Regular.ttf');
+}
+
+@font-face {
+  font-family: Inter-SemiBold;
+  src: url('../fonts/Inter/static/Inter-SemiBold.ttf');
+}
+
+
 .container {
   padding: 0 2rem;
+  font-family: Inter-Regular;
 }
 
 .title {
