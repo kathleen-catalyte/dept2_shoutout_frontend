@@ -1,13 +1,12 @@
 @font-face {
   font-family: Inter-Regular;
-  src: url('../fonts/Inter/static/Inter-Regular.ttf');
+  src: url("../fonts/Inter/static/Inter-Regular.ttf");
 }
 
 @font-face {
   font-family: Inter-SemiBold;
-  src: url('../fonts/Inter/static/Inter-SemiBold.ttf');
+  src: url("../fonts/Inter/static/Inter-SemiBold.ttf");
 }
-
 
 .container {
   padding: 0 2rem;
@@ -15,7 +14,10 @@
 }
 
 .title {
-  font-size: 1.875rem;
+  font-size: 1.91rem;
+  font-family: Inter-SemiBold;
+  margin-bottom: auto;
+  margin-top:.5rem;
 }
 
 .subheader {
