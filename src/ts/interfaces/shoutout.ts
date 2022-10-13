@@ -24,7 +24,7 @@ export interface Element {
   id: number;
   text: string;
   type: string;
-  employeeId?: string;
+  employeeId?: string | null;
 }
 
 export interface Channel {

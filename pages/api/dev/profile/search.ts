@@ -1,18 +1,65 @@
 import { faker } from '@faker-js/faker';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { BasicProfile } from 'src/ts/interfaces/shoutout';
-
-import shoutouts from '../data-set';
+import { BasicProfile, Shoutout } from 'src/ts/interfaces/shoutout';
 
 /**
  * @name handler
- * @param req
+ * @param req request sent to
  * @param res
  * @description
  */
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
   // create an array of data based on Nat's
-  const dataSet = shoutouts;
+  const dataSet: Shoutout[] = [
+    {
+      id: '1',
+      text: 'hi <@Beto> ',
+      createDate: faker.date.soon().toDateString(),
+      authorId: '1',
+      recipients: [
+        {
+          employeeId: '2',
+          email: faker.internet.email(),
+          team: 'DPUS',
+          country: 'US',
+          name: 'Beto',
+          image72: faker.image.avatar(),
+          image192: faker.image.avatar(),
+          image512: faker.image.avatar(),
+        },
+      ],
+      elements: [
+        {
+          id: 1,
+          text: 'hi',
+          type: 'text',
+          employeeId: null,
+        },
+        {
+          id: 2,
+          text: 'Beto',
+          type: 'user',
+          employeeId: '2',
+        },
+      ],
+      channel: {
+        id: faker.lorem.sentence(),
+        slackId: faker.datatype.uuid(),
+        name: faker.name.firstName(),
+      },
+      author: {
+        employeeId: '1',
+        email: faker.internet.email(),
+        team: 'DPUS',
+        country: 'US',
+        name: 'Shouty',
+        image72: faker.image.avatar(),
+        image192: faker.image.avatar(),
+        image512: faker.image.avatar(),
+      },
+    },
+  ];
+
   // grab the query from the url
   const queriedName: string = (req.query.name as string).toLowerCase();
   const queriedEmail: string = (req.query.email as string).toLowerCase();
