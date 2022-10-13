@@ -36,13 +36,13 @@
   stroke-width: 0;
 }
 
-.magnifyingGlassInactive {
-  color: #6a7078;
+.magnifyingGlassActive {
+  color: #5b24f2;
   height: 1.5rem;
 }
 
-.magnifyingGlassActive {
-  color: #5b24f2;
+.magnifyingGlassInactive {
+  color: #6a7078;
   height: 1.5rem;
 }
 
@@ -98,14 +98,6 @@
   cursor: pointer;
 }
 
-.submitButtonActive:hover {
-  --a: -180deg;
-}
-
-.submitButtonActive:active {
-  background: #340f99;
-}
-
 .submitButtonInactive {
   background-color: #e3e5e8;
   color: #6a7078;
@@ -119,4 +111,12 @@
 .searchInputWithText {
   border: 0.1rem solid #5b24f2;
   caret-color: #5b24f2;
+}
+
+.submitButtonActive:active {
+  background: #340f99;
+}
+
+.submitButtonActive:hover {
+  --a: -180deg;
 }
