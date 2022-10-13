@@ -6,11 +6,13 @@
 }
 .profilePageContainer{
     color:white;
+    width: 38rem;
     display: flex;
     height: 100vh;
     flex-direction: column;
-    margin-right:20%;
-    margin-left:20%
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10%;
 }
 .arrowIcon{
     height: 13px;
@@ -60,35 +62,6 @@
     margin:0 auto;
 
 }
-@media only screen and (max-width: 650px) {
-    .profilePageContainer{
-        color:white;
-        display: flex;
-        height: 100vh;
-        flex-direction: column;
-        margin-right:5%;
-        margin-left:5%
-    }
-  }
-  @media only screen and ( max-width:450px) {
-    .profilePageContainer{
-        color:white;
-        display: flex;
-        height: 100vh;
-        flex-direction: column;
-        margin-right:1%;
-        margin-left:1%
-    }
-  }
-  @media only screen and ( max-width:1000px) {
-    .profilePageContainer{
-        color:white;
-        display: flex;
-        height: 100vh;
-        flex-direction: column;
-        margin-right:10%;
-        margin-left:10%
-    }
-  }
+
 
 

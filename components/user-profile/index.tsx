@@ -61,7 +61,7 @@ const UserProfile = (id: any) => {
                         <Tabs value={tabIndex} onChange={handleTabChange} sx={{
                             '& .MuiTabs-indicator': { backgroundColor: "#9873FF" },
                             '& .MuiTab-root': { color: "#808080" },
-                            '& .Mui-selected': { color: "#FFFFFF" },
+                            '& .Mui-selected': { color: "white" },
                             'borderBottom': '1px solid #6B6A6A',
                         }}>
                             <Tab label={profileData.shoutoutsReceived ? recieved(profileData.shoutoutsReceived) : 'Recieved(0)'} />
