@@ -1,5 +1,5 @@
 import React from "react";
-import { Shoutout } from "src/ts/interfaces/shoutout";
+import { Shoutout } from "ts/interfaces";
 
 import styles from "./Shoutouts.module.css";
 

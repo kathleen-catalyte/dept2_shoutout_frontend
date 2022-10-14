@@ -1,20 +1,20 @@
-import { faker } from "@faker-js/faker";
-import { NextApiResponse } from "next";
+import { faker } from '@faker-js/faker';
+import { NextApiResponse } from 'next';
 
 const handler = (req: NextApiResponse, res: NextApiResponse) => {
   res.status(200).json([
     {
       id: 1,
-      text: "hi. <@Beto> " + faker.lorem.sentence(),
+      text: 'hi. <@Beto> ' + faker.lorem.sentence(),
       createDate: faker.date.soon(),
-      authorId: "1",
+      authorId: '1',
       recipients: [
         {
-          employeeId: "2",
+          employeeId: '2',
           email: faker.internet.email(),
-          team: "DPUS",
-          country: "US",
-          name: "Beto",
+          team: 'DPUS',
+          country: 'US',
+          name: 'Beto',
           image72: faker.image.avatar(),
           image192: faker.image.avatar(),
           image512: faker.image.avatar(),
@@ -23,17 +23,17 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
       elements: [
         {
           id: 1,
-          text: "hi.",
-          type: "text",
+          text: 'hi.',
+          type: 'text',
           employeeId: null,
         },
         {
           id: 2,
-          text: "Beto",
-          type: "user",
-          employeeId: "2",
+          text: 'Beto',
+          type: 'user',
+          employeeId: '2',
         },
-        { id: 3, text: faker.lorem.paragraph(), type: "text" },
+        { id: 3, text: faker.lorem.paragraph(), type: 'text' },
       ],
       channel: {
         id: faker.lorem.sentence(),
@@ -43,9 +43,9 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
       author: {
         employeeId: 1,
         email: faker.internet.email(),
-        team: "DPUS",
-        country: "US",
-        name: "Chuck",
+        team: 'DPUS',
+        country: 'US',
+        name: 'Chuck',
         image72: faker.image.avatar(),
         image192: faker.image.avatar(),
         image512: faker.image.avatar(),
@@ -53,16 +53,16 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
     },
     {
       id: 3,
-      text: "hi. <@Beto> ",
+      text: 'hi. <@Beto> ',
       createDate: faker.date.soon(),
-      authorId: "1",
+      authorId: '1',
       recipients: [
         {
-          employeeId: "2",
+          employeeId: '2',
           email: faker.internet.email(),
-          team: "DPUS",
-          country: "US",
-          name: "Beto",
+          team: 'DPUS',
+          country: 'US',
+          name: 'Beto',
           image72: faker.image.avatar(),
           image192: faker.image.avatar(),
           image512: faker.image.avatar(),
@@ -71,15 +71,15 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
       elements: [
         {
           id: 1,
-          text: "hi",
-          type: "text",
+          text: 'hi',
+          type: 'text',
           employeeId: null,
         },
         {
           id: 2,
-          text: "Beto",
-          type: "user",
-          employeeId: "2",
+          text: 'Beto',
+          type: 'user',
+          employeeId: '2',
         },
       ],
       channel: {
@@ -90,9 +90,9 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
       author: {
         employeeId: 1,
         email: faker.internet.email(),
-        team: "DPUS",
-        country: "US",
-        name: "Annabelle",
+        team: 'DPUS',
+        country: 'US',
+        name: 'Annabelle',
         image72: faker.image.avatar(),
         image192: faker.image.avatar(),
         image512: faker.image.avatar(),
@@ -100,16 +100,16 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
     },
     {
       id: 1,
-      text: "hi. <@Beto> ",
+      text: 'hi. <@Beto> ',
       createDate: faker.date.soon(),
-      authorId: "1",
+      authorId: '1',
       recipients: [
         {
-          employeeId: "2",
+          employeeId: '2',
           email: faker.internet.email(),
-          team: "DPUS",
-          country: "US",
-          name: "Beto",
+          team: 'DPUS',
+          country: 'US',
+          name: 'Beto',
           image72: faker.image.avatar(),
           image192: faker.image.avatar(),
           image512: faker.image.avatar(),
@@ -118,15 +118,15 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
       elements: [
         {
           id: 1,
-          text: "hi",
-          type: "text",
+          text: 'hi',
+          type: 'text',
           employeeId: null,
         },
         {
           id: 2,
-          text: "Beto",
-          type: "user",
-          employeeId: "2",
+          text: 'Beto',
+          type: 'user',
+          employeeId: '2',
         },
       ],
       channel: {
@@ -137,25 +137,26 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
       author: {
         employeeId: 1,
         email: faker.internet.email(),
-        team: "DPUS",
-        country: "US",
-        name: "Shouty",
+        team: 'DPUS',
+        country: 'US',
+        name: 'Shouty',
         image72: faker.image.avatar(),
         image192: faker.image.avatar(),
         image512: faker.image.avatar(),
       },
-    },{
+    },
+    {
       id: 1,
-      text: "hi. <@Beto> " + faker.lorem.sentence(),
+      text: 'hi. <@Beto> ' + faker.lorem.sentence(),
       createDate: faker.date.soon(),
-      authorId: "1",
+      authorId: '1',
       recipients: [
         {
-          employeeId: "2",
+          employeeId: '2',
           email: faker.internet.email(),
-          team: "DPUS",
-          country: "US",
-          name: "Beto",
+          team: 'DPUS',
+          country: 'US',
+          name: 'Beto',
           image72: faker.image.avatar(),
           image192: faker.image.avatar(),
           image512: faker.image.avatar(),
@@ -164,17 +165,17 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
       elements: [
         {
           id: 1,
-          text: "hi.",
-          type: "text",
+          text: 'hi.',
+          type: 'text',
           employeeId: null,
         },
         {
           id: 2,
-          text: "Beto",
-          type: "user",
-          employeeId: "2",
+          text: 'Beto',
+          type: 'user',
+          employeeId: '2',
         },
-        { id: 3, text: faker.lorem.paragraph(), type: "text" },
+        { id: 3, text: faker.lorem.paragraph(), type: 'text' },
       ],
       channel: {
         id: faker.lorem.sentence(),
@@ -184,25 +185,26 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
       author: {
         employeeId: 1,
         email: faker.internet.email(),
-        team: "DPUS",
-        country: "US",
-        name: "Chuck",
+        team: 'DPUS',
+        country: 'US',
+        name: 'Chuck',
         image72: faker.image.avatar(),
         image192: faker.image.avatar(),
         image512: faker.image.avatar(),
       },
-    },{
+    },
+    {
       id: 1,
-      text: "hi. <@Beto> " + faker.lorem.sentence(),
+      text: 'hi. <@Beto> ' + faker.lorem.sentence(),
       createDate: faker.date.soon(),
-      authorId: "1",
+      authorId: '1',
       recipients: [
         {
-          employeeId: "2",
+          employeeId: '2',
           email: faker.internet.email(),
-          team: "DPUS",
-          country: "US",
-          name: "Beto",
+          team: 'DPUS',
+          country: 'US',
+          name: 'Beto',
           image72: faker.image.avatar(),
           image192: faker.image.avatar(),
           image512: faker.image.avatar(),
@@ -211,17 +213,17 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
       elements: [
         {
           id: 1,
-          text: "hi.",
-          type: "text",
+          text: 'hi.',
+          type: 'text',
           employeeId: null,
         },
         {
           id: 2,
-          text: "Beto",
-          type: "user",
-          employeeId: "2",
+          text: 'Beto',
+          type: 'user',
+          employeeId: '2',
         },
-        { id: 3, text: faker.lorem.paragraph(), type: "text" },
+        { id: 3, text: faker.lorem.paragraph(), type: 'text' },
       ],
       channel: {
         id: faker.lorem.sentence(),
@@ -231,9 +233,9 @@ const handler = (req: NextApiResponse, res: NextApiResponse) => {
       author: {
         employeeId: 1,
         email: faker.internet.email(),
-        team: "DPUS",
-        country: "US",
-        name: "Chuck",
+        team: 'DPUS',
+        country: 'US',
+        name: 'Chuck',
         image72: faker.image.avatar(),
         image192: faker.image.avatar(),
         image512: faker.image.avatar(),

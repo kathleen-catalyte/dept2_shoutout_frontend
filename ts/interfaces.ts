@@ -2,6 +2,7 @@ export interface Shoutout {
   id: string;
   text: string;
   createDate: string;
+  authorId: string;
   recipients: BasicProfile[];
   elements: Element[];
   channel: Channel;
@@ -23,7 +24,7 @@ export interface Element {
   id: number;
   text: string;
   type: string;
-  employeeId?: string;
+  employeeId?: string | null;
 }
 
 export interface Channel {

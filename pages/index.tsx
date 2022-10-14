@@ -1,6 +1,7 @@
 import { useUser } from "@auth0/nextjs-auth0";
 import type { NextPage } from "next";
 
+import SearchBox from "@/components/search/search-box";
 import Shoutouts from "@/components/shoutouts";
 // import ShoutoutsTemp from '@/components/shoutouts-temp'
 import styles from "@/styles/Home.module.css";
@@ -19,9 +20,11 @@ const Home: NextPage = () => {
       <div className={styles.icon}></div>
       <h1 className={styles.title}>Shoutouts</h1>
       <p className={styles.subheader}>
-        Keeping track Of DEPT&#174;&#39;s shoutouts
+        Keeping track of DEPT&#174;&#39;s shoutouts
       </p>
-
+      <div className={styles.searchContainer}>
+        <SearchBox />
+      </div>
       {user ? (
         <>
           <Shoutouts />
@@ -37,6 +40,7 @@ const Home: NextPage = () => {
           <a href="/api/auth/login">Login</a>
         </>
       )}
+      {/*remove following SearchBox */}
     </div>
   );
 };
