@@ -1,40 +1,44 @@
+import { faker } from '@faker-js/faker';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { BasicProfile, Shoutout } from 'ts/interfaces';
-
-import generateShoutouts from './search-dummy-data';
+import { BasicProfile } from 'ts/interfaces';
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
-  const dataSet: Shoutout[] = generateShoutouts();
   const queriedName: string = (req.query.name as string).toLowerCase();
   const queriedEmail: string = (req.query.email as string).toLowerCase();
   let matchingProfilesInDb: BasicProfile[] = [];
 
-  dataSet.forEach((shoutout) => {
-    const recipientsDataSet = shoutout.recipients;
+  const generateProfiles = () => {
+    let profiles: BasicProfile[] = [];
 
-    recipientsDataSet.forEach((recipient) => {
-      if (
-        recipient.name &&
-        (recipient.name.toLowerCase().includes(queriedName) ||
-          recipient.email.includes(queriedEmail)) &&
-        !matchingProfilesInDb.some((profile) => profile.name === recipient.name)
-      ) {
-        matchingProfilesInDb.push(recipient);
-        if (matchingProfilesInDb.length >= 100) {
-          return res.status(200).json(matchingProfilesInDb);
-        }
-      }
-    });
+    for (let i = 1; i < 151; i++) {
+      profiles.push({
+        employeeId: i.toString(),
+        email: faker.internet.email(),
+        team: 'DPUS',
+        country: 'US',
+        name: faker.name.fullName(),
+        image72: `https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/${i}.jpg`,
+        image192: `https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/${
+          200 + i
+        }.jpg`,
+        image512: `https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/${
+          400 + i
+        }.jpg`,
+      });
+    }
 
+    return profiles;
+  };
+
+  const dataSet: BasicProfile[] = generateProfiles();
+
+  dataSet.forEach((profile) => {
     if (
-      (shoutout.author.name &&
-        shoutout.author.name.toLowerCase().includes(queriedName)) ||
-      (shoutout.author.email.includes(queriedEmail) &&
-        !matchingProfilesInDb.some(
-          (profile) => profile.name === shoutout.author.name
-        ))
+      profile.name &&
+      (profile.name.toLowerCase().includes(queriedName) ||
+        profile.email.includes(queriedEmail))
     ) {
-      matchingProfilesInDb.push(shoutout.author);
+      matchingProfilesInDb.push(profile);
       if (matchingProfilesInDb.length >= 100) {
         return res.status(200).json(matchingProfilesInDb);
       }
