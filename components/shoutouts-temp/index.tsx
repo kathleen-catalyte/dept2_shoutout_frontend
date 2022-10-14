@@ -1,5 +1,5 @@
-import { Shoutout } from "src/ts/interfaces/shoutout";
 import useSWR from "swr";
+import { Shoutout } from "ts/interfaces";
 
 import fetch from "@/lib/fetch";
 
