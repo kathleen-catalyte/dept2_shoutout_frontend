@@ -25,11 +25,11 @@ export default withApiAuthRequired(async function userProfile(
     } else {
         // use mock data if no api_host provided
         console.warn("!!!!! No API_HOST configured using mock data !!!!!")
-        const url = `${process.env.DEV_API_URL}/user`
+        let url = `${process.env.DEV_API_URL}/${id}`
+
         const response = await fetch(url);
 
         latest = await response.json();
     }
-
-    res.status(200).json(latest);
+    res.status(200).json(latest)
 });

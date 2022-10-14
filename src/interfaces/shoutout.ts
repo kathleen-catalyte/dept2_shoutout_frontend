@@ -5,6 +5,7 @@ export interface Shoutout {
     recipients: BasicProfile[];
     elements: Element[];
     channel: Channel;
+    authorId: string;
     author: BasicProfile;
 }
 

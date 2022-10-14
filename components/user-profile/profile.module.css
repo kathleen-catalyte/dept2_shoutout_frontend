@@ -12,7 +12,7 @@
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 10%;
+    padding-top: 1%;
 }
 .arrowIcon{
     height: 16px;
@@ -31,6 +31,7 @@
 }
 .backButton{
     padding-top: 10%;
+    left:8px;
     position: relative;
     width: fit-content;
     display: grid;
@@ -43,7 +44,7 @@
     cursor: pointer;
 }
 .profilePicture{
-    padding-top: 10%;
+    padding-top: 14%;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -59,14 +60,14 @@
     border-radius: 50%;
 }
 .name{
-    padding-top: 3%;
+    padding-top: 25px;
     color: #9873FF;
     font-family: inter;
     font-size: 26px;
     font-weight: 700;
 }
 .shoutoutsContainer{
-    padding-top: 30px;
+    padding-top: 78px;
     display: flex;
     flex-direction: column;
 }

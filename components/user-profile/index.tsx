@@ -10,11 +10,12 @@ import useSWR from 'swr'
 import fetch from '@/lib/fetch'
 
 import ProfilePicture from '../profile-picture'
+import ShoutoutComp from '../shoutouts/shoutoutcomp';
 import styles from './profile.module.css'
 
 
 const UserProfile = (id: any) => {
-    const { data, error } = useSWR(`/api/profile/${id}`, fetch)
+    const { data, error } = useSWR(`/api/profile/${Object.values(id)[0]}`, fetch)
     const profileData = (data as unknown) as FullProfile
     const [tabIndex, setTabIndex] = useState(0);
 
@@ -53,30 +54,29 @@ const UserProfile = (id: any) => {
                             <ProfilePicture picture={profileData.image192} /> </div> : null}
 
                     <a className={styles.name}>@{profileData.name}</a>
-                    <div style={{ 'paddingTop': '3%' }}> <UsersIcon style={{ "height": '20px', 'paddingLeft': '2%', 'paddingRight': '.3%', 'position': 'relative', "top": '2.5px' }} /><a style={{ 'paddingLeft': '6px' }}>{profileData.team}</a><MapIcon style={{ "height": '20px', 'paddingLeft': '30px', 'paddingRight': '.3%', 'position': 'relative', "top": '2.5px' }} /><a style={{ 'paddingLeft': '6px' }}>{profileData.country}</a></div>
+                    <div style={{ 'paddingTop': '3%' }}> <UsersIcon style={{ "height": '20px', 'paddingLeft': '2%', 'paddingRight': '.3%', 'position': 'relative', "top": '2.5px' }} /><a style={{ 'paddingLeft': '6px' }}>{profileData.team}</a><MapIcon style={{ "height": '20px', 'paddingLeft': '42px', 'paddingRight': '.3%', 'position': 'relative', "top": '2.5px' }} /><a style={{ 'paddingLeft': '6px' }}>{profileData.country}</a></div>
 
                 </div>
                 <div className={styles.shoutoutsContainer}>
                     <Box>
                         <Tabs value={tabIndex} onChange={handleTabChange} sx={{
                             '& .MuiTabs-indicator': { backgroundColor: "#9873FF" },
-                            '& .MuiTab-root': { color: "#808080" },
+                            '& .MuiTab-root': { color: "#808080", height: '1px' },
                             '& .Mui-selected': { color: "white" },
+                            '& .MuiButtonBase-root': { 'fontSize': '12px', 'fontWeight': '400' },
                             'borderBottom': '1px solid #6B6A6A',
                         }}>
                             <Tab label={profileData.shoutoutsReceived ? recieved(profileData.shoutoutsReceived) : 'Recieved(0)'} />
                             <Tab label={profileData.shoutoutsGiven ? given(profileData.shoutoutsGiven) : 'Given(0)'} />
                         </Tabs>
                     </Box>
-                    <Box sx={{ padding: 2 }} className={styles.shoutout}>
+                    <Box sx={{ paddingTop: '28px' }} className={styles.shoutout}>
                         {tabIndex === 0 && (
 
                             profileData.shoutoutsReceived.map((shoutout, idx) => {
                                 //replace this with the shoutout container
                                 return (
-                                    <p key={idx}>
-                                        {shoutout.text}
-                                    </p>)
+                                    <ShoutoutComp shoutout={shoutout} key={idx} />)
                             })
 
                         )}
@@ -84,9 +84,7 @@ const UserProfile = (id: any) => {
                             profileData.shoutoutsGiven.map((shoutout, idx) => {
                                 //replace this with the shoutout container
                                 return (
-                                    <p key={idx}>
-                                        {shoutout.text}
-                                    </p>)
+                                    <ShoutoutComp shoutout={shoutout} key={idx} />)
                             })
                         )}
 
