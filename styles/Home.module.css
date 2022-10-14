@@ -1,3 +1,40 @@
+@font-face {
+  font-family: Inter-Regular;
+  src: url("../fonts/Inter/static/Inter-Regular.ttf");
+}
+
+@font-face {
+  font-family: Inter-SemiBold;
+  src: url("../fonts/Inter/static/Inter-SemiBold.ttf");
+}
+
 .container {
   padding: 0 2rem;
+  font-family: Inter-Regular;
+}
+
+.title {
+  font-size: 1.91rem;
+  font-family: Inter-SemiBold;
+  margin-bottom: -.3rem;
+  margin-top:1.75rem;
+}
+
+.subheader {
+  font-size: 1rem;
+  color: #ffffffa9;
+}
+
+.icon {
+  background: linear-gradient(253.43deg, #9873ff, #5b24f2 100%);
+  width: 5.188rem;
+  height: 5rem;
+  border-radius: 3.125rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.625rem;
+}
+
+.logout {
+  padding-bottom: 1rem;
 }
