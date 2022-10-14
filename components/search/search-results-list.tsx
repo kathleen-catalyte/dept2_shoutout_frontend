@@ -1,18 +1,21 @@
 import type { NextPage } from 'next';
-import { useRouter, withRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import { BasicProfile } from 'ts/interfaces';
 
 const SearchResultsList: NextPage = () => {
-  const { query } = useRouter();
+  const [ storedSearchResults, setStoredSearchResults ] = useState<BasicProfile[]>([]);
 
-  const storedSearchResults = sessionStorage.getItem('profileSearchResults');
-  const profileSearchResults: BasicProfile[] = storedSearchResults && JSON.parse(storedSearchResults);
+  useEffect(() => {
+      const storedSearchResults = sessionStorage.getItem('profileSearchResults');
+      if (storedSearchResults) {
+        setStoredSearchResults(JSON.parse(storedSearchResults));
+      }
+     },[])
 
   return (
     <div>
-      {profileSearchResults && profileSearchResults.map((profile: BasicProfile) => (
+      {storedSearchResults && storedSearchResults.map((profile: BasicProfile) => (
       <ul key={profile.employeeId}>
-        <li key={profile.employeeId}>Employee Id: {profile.employeeId}</li>
           <li key={profile.email}>Email: {profile.email}</li>
           <li key={profile.team}>Team: {profile.team}</li>
           <li key={profile.country}>Country: {profile.country}</li>

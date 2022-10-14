@@ -18,9 +18,7 @@ const generateShoutouts = () => {
           team: 'DPUS',
           country: 'US',
           name: faker.name.fullName(),
-          image72: faker.image.avatar(),
-          image192: faker.image.avatar(),
-          image512: faker.image.avatar(),
+          image72: `https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/${i}.jpg`,
         },
       ],
       elements: [
@@ -48,9 +46,9 @@ const generateShoutouts = () => {
         team: 'DPUS',
         country: 'US',
         name: faker.name.fullName(),
-        image72: faker.image.avatar(),
-        image192: faker.image.avatar(),
-        image512: faker.image.avatar(),
+        image72: `https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/${
+          300 + i
+        }.jpg`,
       },
     });
   }

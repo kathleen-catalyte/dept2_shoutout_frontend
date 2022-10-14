@@ -20,7 +20,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
         !matchingProfilesInDb.some((profile) => profile.name === recipient.name)
       ) {
         matchingProfilesInDb.push(recipient);
-        if (matchingProfilesInDb.length >= 101) {
+        if (matchingProfilesInDb.length >= 100) {
           return res.status(200).json(matchingProfilesInDb);
         }
       }
@@ -35,7 +35,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
         ))
     ) {
       matchingProfilesInDb.push(shoutout.author);
-      if (matchingProfilesInDb.length >= 101) {
+      if (matchingProfilesInDb.length >= 100) {
         return res.status(200).json(matchingProfilesInDb);
       }
     }

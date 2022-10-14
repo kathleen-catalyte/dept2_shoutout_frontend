@@ -11,7 +11,8 @@ const SearchBox = () => {
   const [inputValue, setInputValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
-
+  
+  const inputExists = () => inputValue.length >= 1;
   const handleFocus = () => setFocused(true);
   const handleBlur = () => setFocused(false);
   const handleFieldChange = (e: ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value);
@@ -24,6 +25,7 @@ const SearchBox = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     sessionStorage.removeItem('profileSearchResults');
+    
     if (inputRef.current !== null) {
       const searchQuery: string = inputRef.current.value.trim();
       const response = await fetch(
@@ -42,7 +44,7 @@ const SearchBox = () => {
           name='search field'
           type='text'
           className={`${styles.searchInput} ${
-            (focused || inputValue.length >= 1) && styles.searchInputWithText
+            (focused || inputExists()) && styles.searchInputWithText
           }`}
           placeholder='Search for teammates'
           onFocus={handleFocus}
@@ -54,13 +56,13 @@ const SearchBox = () => {
         <div className={styles.magnifyingGlassWrapper}>
           <MagnifyingGlassIcon
             className={
-              focused || inputValue.length >= 1
+              focused || inputExists()
                 ? styles.magnifyingGlassActive
                 : styles.magnifyingGlassInactive
             }
           />
         </div>
-        {inputValue.length >= 1 ? (
+        {inputExists() ? (
           <button
             name='clear search button'
             type='reset'
@@ -72,7 +74,7 @@ const SearchBox = () => {
         ) : (
           ''
         )}
-        {inputValue.length >= 1 ? (
+        {inputExists() ? (
           <button
             name='submit search button'
             type='submit'
