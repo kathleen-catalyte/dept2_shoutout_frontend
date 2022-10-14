@@ -14,6 +14,7 @@ const SearchResultsList: NextPage = () => {
 
   return (
     <div>
+      {storedSearchResults.length > 0 ? <p>Search Results:</p> : <p>Your search does not match any profiles.</p>}
       {storedSearchResults && storedSearchResults.map((profile: BasicProfile) => (
       <ul key={profile.employeeId}>
           <li key={profile.email}>Email: {profile.email}</li>
