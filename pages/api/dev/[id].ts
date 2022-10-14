@@ -51,11 +51,11 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
                         name: faker.name.firstName()
                     },
                     author: {
-                        employeeId: "1",
+                        employeeId: '2',
                         email: faker.internet.email(),
                         team: "DPUS",
                         country: "US",
-                        name: "Shouty",
+                        name: "Beto",
                         image72: faker.image.avatar(),
                         image192: faker.image.avatar(),
                         image512: faker.image.avatar()
@@ -268,11 +268,11 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
                         name: faker.name.firstName()
                     },
                     author: {
-                        employeeId: "1",
+                        employeeId: 1,
                         email: faker.internet.email(),
                         team: "DPUS",
                         country: "US",
-                        name: "Shouty",
+                        name: "Jesse Streb",
                         image72: faker.image.avatar(),
                         image192: faker.image.avatar(),
                         image512: faker.image.avatar()
@@ -314,11 +314,11 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
                         name: faker.name.firstName()
                     },
                     author: {
-                        employeeId: '1',
+                        employeeId: 12,
                         email: faker.internet.email(),
                         team: "DPUS",
                         country: "US",
-                        name: "Shouty",
+                        name: "Beto",
                         image72: faker.image.avatar(),
                         image192: faker.image.avatar(),
                         image512: faker.image.avatar()
