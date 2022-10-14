@@ -1,6 +1,10 @@
 import Link from "next/link";
 import React from "react";
+<<<<<<< HEAD
 import { Element, Shoutout } from "src/ts/interfaces/shoutout";
+=======
+import { Shoutout } from "ts/interfaces";
+>>>>>>> ca2d3e76551b2bd8ab6213fcdda476535210bf09
 
 import styles from "./Shoutouts.module.css";
 

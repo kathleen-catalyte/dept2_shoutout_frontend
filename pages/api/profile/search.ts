@@ -2,14 +2,15 @@
 import { getAccessToken, withApiAuthRequired } from '@auth0/nextjs-auth0';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default withApiAuthRequired(async function latestShoutouts(
+export default withApiAuthRequired(async function profilesSearch(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  let latest;
+  let profiles;
   if (process.env.API_HOST) {
     const { accessToken } = await getAccessToken(req, res, {});
-    const url = `${process.env.API_HOST}/shoutouts/latest`;
+    const searchQuery = (req.query.name as string).toString();
+    const url = `${process.env.API_HOST}/profile/search?name=${searchQuery}&email=${searchQuery}`;
 
     const response = await fetch(url, {
       headers: {
@@ -17,15 +18,17 @@ export default withApiAuthRequired(async function latestShoutouts(
       },
     });
 
-    latest = await response.json();
+    profiles = await response.json();
   } else {
     // use mock data if no api_host provided
     console.warn('!!!!! No API_HOST configured using mock data !!!!!');
-    const url = `${process.env.DEV_API_URL}/latest`;
+    const searchQuery = (req.query.name as string).toString();
+    const url = `${process.env.DEV_API_URL}/profile/search?name=${searchQuery}&email=${searchQuery}`;
+
     const response = await fetch(url);
 
-    latest = await response.json();
+    profiles = await response.json();
   }
 
-  res.status(200).json(latest);
+  res.status(200).json(profiles);
 });
