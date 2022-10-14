@@ -60,14 +60,14 @@
     border-radius: 50%;
 }
 .name{
-    padding-top: 25px;
+    padding-top: 23px;
     color: #9873FF;
     font-family: inter;
     font-size: 26px;
     font-weight: 700;
 }
 .shoutoutsContainer{
-    padding-top: 78px;
+    padding-top: 47px;
     display: flex;
     flex-direction: column;
 }

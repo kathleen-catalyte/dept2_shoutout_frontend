@@ -54,7 +54,7 @@ const UserProfile = (id: any) => {
                             <ProfilePicture picture={profileData.image192} /> </div> : null}
 
                     <a className={styles.name}>@{profileData.name}</a>
-                    <div style={{ 'paddingTop': '3%' }}> <UsersIcon style={{ "height": '20px', 'paddingLeft': '2%', 'paddingRight': '.3%', 'position': 'relative', "top": '2.5px' }} /><a style={{ 'paddingLeft': '6px' }}>{profileData.team}</a><MapIcon style={{ "height": '20px', 'paddingLeft': '42px', 'paddingRight': '.3%', 'position': 'relative', "top": '2.5px' }} /><a style={{ 'paddingLeft': '6px' }}>{profileData.country}</a></div>
+                    
 
                 </div>
                 <div className={styles.shoutoutsContainer}>
