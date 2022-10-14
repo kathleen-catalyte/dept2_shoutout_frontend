@@ -101,7 +101,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
                         email: faker.internet.email(),
                         team: "DPUS",
                         country: "US",
-                        name: "Shouty",
+                        name: "Jesse Streb",
                         image72: faker.image.avatar(),
                         image192: faker.image.avatar(),
                         image512: faker.image.avatar()
@@ -158,7 +158,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
                             email: faker.internet.email(),
                             team: "DPUS",
                             country: "US",
-                            name: "Shouty",
+                            name: "Jesse Streb",
                             image72: faker.image.avatar(),
                             image192: faker.image.avatar(),
                             image512: faker.image.avatar()
@@ -204,7 +204,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
                             email: faker.internet.email(),
                             team: "DPUS",
                             country: "US",
-                            name: "Shouty",
+                            name: "Beto",
                             image72: faker.image.avatar(),
                             image192: faker.image.avatar(),
                             image512: faker.image.avatar()
