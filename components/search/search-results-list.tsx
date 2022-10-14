@@ -2,6 +2,8 @@ import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import { BasicProfile } from 'ts/interfaces';
 
+import styles from './SearchResultsList.module.css'
+
 const SearchResultsList: NextPage = () => {
   const [ storedSearchResults, setStoredSearchResults ] = useState<BasicProfile[]>([]);
 
@@ -14,9 +16,9 @@ const SearchResultsList: NextPage = () => {
 
   return (
     <div>
-      {storedSearchResults.length > 0 ? <p>Search Results:</p> : <p>Your search does not match any profiles.</p>}
+      {storedSearchResults.length > 0 ? <p className={styles.searchResultsMsg}>Search Results:</p> : <p className={styles.searchResultsMsg}>Your search does not match any profiles.</p>}
       {storedSearchResults && storedSearchResults.map((profile: BasicProfile) => (
-      <ul key={profile.employeeId}>
+      <ul key={profile.employeeId} className={styles.searchResultsList}>
           <li key={profile.email}>Email: {profile.email}</li>
           <li key={profile.team}>Team: {profile.team}</li>
           <li key={profile.country}>Country: {profile.country}</li>

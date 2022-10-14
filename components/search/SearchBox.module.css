@@ -30,7 +30,7 @@
   color: #c82323;
   height: 3.5rem;
   top: 50%;
-  right: 1rem;
+  right: 2.4rem;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   stroke-width: 0;
@@ -38,18 +38,18 @@
 
 .magnifyingGlassActive {
   color: #5b24f2;
-  height: 1.5rem;
+  height: 1.4rem;
 }
 
 .magnifyingGlassInactive {
   color: #6a7078;
-  height: 1.5rem;
+  height: 1.4rem;
 }
 
 .magnifyingGlassWrapper {
   position: absolute;
-  left: 2rem;
-  top: 50%;
+  left: .5rem;
+  top: 51.5%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
@@ -64,12 +64,13 @@
 .searchInput {
   font-family: Inter-Regular, Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  width: 16.2rem;
+  width: 16.188rem;
   border: 0.1rem solid #ccc;
   outline: 0;
   border-radius: 0.5rem;
   min-height: 3.5rem;
-  padding-left: 3rem;
+  padding-left: 3.15rem;
+  margin-left: -7.1rem;
   font-size: 1rem;
 }
 
@@ -86,7 +87,7 @@
   border: none;
   min-height: 3.5rem;
   width: 6.45rem;
-  margin-left: 0.62rem;
+  margin-left: 0.65rem;
   border-radius: 0.5rem;
 }
 

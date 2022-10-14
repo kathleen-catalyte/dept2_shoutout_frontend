@@ -20,9 +20,9 @@ const Home: NextPage = () => {
       <div className={styles.icon}></div>
       <h1 className={styles.title}>Shoutouts</h1>
       <p className={styles.subheader}>
-        Keeping track Of DEPT&#174;&#39;s shoutouts
+        Keeping track of DEPT&#174;&#39;s shoutouts
       </p>
-      <div className={styles.searchWrapper}>
+      <div className={styles.searchContainer}>
         <SearchBox />
       </div>
       {user ? (

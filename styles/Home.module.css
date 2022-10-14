@@ -13,18 +13,6 @@
   font-family: Inter-Regular;
 }
 
-.title {
-  font-size: 1.91rem;
-  font-family: Inter-SemiBold;
-  margin-bottom: -.3rem;
-  margin-top:1.75rem;
-}
-
-.subheader {
-  font-size: 1rem;
-  color: #ffffffa9;
-}
-
 .icon {
   background: linear-gradient(253.43deg, #9873ff, #5b24f2 100%);
   width: 5.188rem;
@@ -37,4 +25,21 @@
 
 .logout {
   padding-bottom: 1rem;
+}
+
+.searchContainer {
+  margin-top: -.5rem;
+  margin-bottom: 1.55rem;
+}
+
+.subheader {
+  font-size: 1rem;
+  color: #ffffffa9;
+}
+
+.title {
+  font-size: 1.91rem;
+  font-family: Inter-SemiBold;
+  margin-bottom: -.3rem;
+  margin-top:1.75rem;
 }
