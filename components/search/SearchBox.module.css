@@ -1,0 +1,123 @@
+@font-face {
+  font-family: Inter-Regular;
+  src: url('../../fonts/Inter/static/Inter-Regular.ttf');
+}
+
+@font-face {
+  font-family: Inter-SemiBold;
+  src: url('../../fonts/Inter/static/Inter-SemiBold.ttf');
+}
+
+@property --a {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 45deg;
+}
+
+.closeButton {
+  position: absolute;
+  right: 5.45rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+}
+
+.closeIcon {
+  color: #c82323;
+  height: 3.5rem;
+  top: 50%;
+  right: 2.4rem;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  stroke-width: 0;
+}
+
+.magnifyingGlassActive {
+  color: #5b24f2;
+  height: 1.4rem;
+}
+
+.magnifyingGlassInactive {
+  color: #6a7078;
+  height: 1.4rem;
+}
+
+.magnifyingGlassWrapper {
+  position: absolute;
+  left: .5rem;
+  top: 51.5%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.searchInput,
+.closeIcon,
+.searchWrapper {
+  position: relative;
+  padding: 1rem;
+}
+
+.searchInput {
+  font-family: Inter-Regular, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  width: 16.188rem;
+  border: 0.1rem solid #ccc;
+  outline: 0;
+  border-radius: 0.5rem;
+  min-height: 3.5rem;
+  padding-left: 3.15rem;
+  margin-left: -7.1rem;
+  font-size: 1rem;
+}
+
+.searchWrapper {
+  width: 22.2rem;
+  margin: auto;
+  position: relative;
+}
+
+.submitButton {
+  font-family: Inter-SemiBold, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  position: absolute;
+  border: none;
+  min-height: 3.5rem;
+  width: 6.45rem;
+  margin-left: 0.65rem;
+  border-radius: 0.5rem;
+}
+
+.submitButtonActive {
+  --a: 45deg;
+  transition: --a 300ms;
+  background: linear-gradient(var(--a), #5b24f2, #9873ff);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.submitButtonInactive {
+  background-color: #e3e5e8;
+  color: #6a7078;
+}
+
+.closeIcon:hover {
+  cursor: pointer;
+}
+
+.searchInput:focus,
+.searchInputWithText {
+  border: 0.1rem solid #5b24f2;
+  caret-color: #5b24f2;
+}
+
+.submitButtonActive:active {
+  background: #340f99;
+}
+
+.submitButtonActive:hover {
+  --a: -180deg;
+}
