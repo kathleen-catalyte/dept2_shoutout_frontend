@@ -22,11 +22,11 @@ const Home: NextPage = () => {
       <p className={styles.subheader}>
         Keeping track of DEPT&#174;&#39;s shoutouts
       </p>
-      <div className={styles.searchContainer}>
-        <SearchBox />
-      </div>
       {user ? (
         <>
+          <div className={styles.searchContainer}>
+            <SearchBox />
+          </div>
           <Shoutouts />
 
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
