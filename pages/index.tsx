@@ -28,16 +28,20 @@ const Home: NextPage = () => {
             <SearchBox />
           </div>
           <Shoutouts />
-          <div >
+          <div>
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-            <a className={styles.logout} href="/api/auth/logout">Log Out</a>
+            <a className={styles.logout} href="/api/auth/logout">
+              Log Out
+            </a>
           </div>
         </>
       ) : (
         <>
-          <div className={styles.loginContainer} >
+          <div className={styles.loginContainer}>
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-            <a className={styles.login} href="/api/auth/login">Log In</a>
+            <a className={styles.login} href="/api/auth/login">
+              Log In
+            </a>
           </div>
         </>
       )}
