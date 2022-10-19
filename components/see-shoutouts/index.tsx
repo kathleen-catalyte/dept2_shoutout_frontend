@@ -2,10 +2,11 @@ import { ArrowRightIcon } from "@heroicons/react/24/solid/";
 
 import styles from "./SeeShoutouts.module.css";
 
-const SeeShoutouts = () => {
+const SeeShoutouts = (props: { employeeId: string }, key: number) => {
+    const { employeeId } = props;
   return (
     <div>
-      <a className={styles.seeShoutoutContainer} href="">
+      <a className={styles.seeShoutoutContainer} href={`/user/${(employeeId)}`}>
         See shoutouts <ArrowRightIcon className={styles.arrowIcon} />
       </a>
     </div>
