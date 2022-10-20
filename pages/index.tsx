@@ -28,7 +28,7 @@ const Home: NextPage = () => {
             <SearchBox />
           </div>
           <Shoutouts />
-          <div>
+          <div className={styles.logoutContainer}>
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a className={styles.logout} href="/api/auth/logout">
               Log Out

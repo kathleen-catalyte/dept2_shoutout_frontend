@@ -8,10 +8,6 @@
   src: url("../fonts/Inter/static/Inter-SemiBold.ttf");
 }
 
-@keyframes onHover {
-  from {background: linear-gradient(180deg, #1b1c1f 0%, #1b1c1f 100%);}
-  to { background: linear-gradient(180deg, #340f99 0%, #9873ff 100%);}
-}
 .container {
   padding: 0 2rem;
   font-family: Inter-Regular;
@@ -27,10 +23,10 @@
   margin-top: 2.625rem;
 }
 
-.logout {
+.logoutContainer {
   height: 2.875rem;
-  text-align: center;
-  background: #1b1c1f;
+  z-index: 1;
+  background: linear-gradient(180deg, #1b1c1f 0%, #1b1c1f 100%);
   padding: 0.75rem 2.5rem;
   border-radius: 8px;
   margin-left: auto;
@@ -38,34 +34,58 @@
   position: absolute;
   top: 1.5rem;
   right: 2rem;
+  align-content: center;
   white-space: nowrap;
 }
 
-.logout:hover {
+.logout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(180deg, #340f99 0%, #9873ff 100%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: -1;
+  border-radius: 8px;
 }
 
-.login {
+.logout:hover::before {
+  opacity: 1;
+}
+
+.loginContainer {
   width: 8.25rem;
   height: 2.875rem;
   text-align: center;
-  background: #1b1c1f;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, #1b1c1f 0%, #1b1c1f 100%);
   padding: 0.75rem 2.5rem;
   border-radius: 8px;
   margin-left: auto;
   margin-right: auto;
-  
 }
 
-.login:hover {
+.login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(180deg, #340f99 0%, #9873ff 100%);
-  
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: -1;
+  border-radius: 8px;
 }
 
-/*animation-name: onHover; 
-  animation-duration: 4s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards; */
+.login:hover::before {
+  opacity: 1;
+}
 
 .loginContainer {
   margin-top: 2.75rem;
