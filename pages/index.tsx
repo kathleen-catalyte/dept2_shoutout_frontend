@@ -1,6 +1,7 @@
 import { useUser } from "@auth0/nextjs-auth0";
 import type { NextPage } from "next";
 
+import Logout from "@/components/logout/logout";
 import SearchBox from "@/components/search/search-box";
 import Shoutouts from "@/components/shoutouts";
 // import ShoutoutsTemp from '@/components/shoutouts-temp'
@@ -28,12 +29,7 @@ const Home: NextPage = () => {
             <SearchBox />
           </div>
           <Shoutouts />
-          <div className={styles.logoutContainer}>
-            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-            <a className={styles.logout} href="/api/auth/logout">
-              Log Out
-            </a>
-          </div>
+          <Logout />
         </>
       ) : (
         <>
