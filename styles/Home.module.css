@@ -8,6 +8,10 @@
   src: url("../fonts/Inter/static/Inter-SemiBold.ttf");
 }
 
+@keyframes onHover {
+  from {background: linear-gradient(180deg, #1b1c1f 0%, #1b1c1f 100%);}
+  to { background: linear-gradient(180deg, #340f99 0%, #9873ff 100%);}
+}
 .container {
   padding: 0 2rem;
   font-family: Inter-Regular;
@@ -37,6 +41,10 @@
   white-space: nowrap;
 }
 
+.logout:hover {
+  background: linear-gradient(180deg, #340f99 0%, #9873ff 100%);
+}
+
 .login {
   width: 8.25rem;
   height: 2.875rem;
@@ -46,7 +54,18 @@
   border-radius: 8px;
   margin-left: auto;
   margin-right: auto;
+  
 }
+
+.login:hover {
+  background: linear-gradient(180deg, #340f99 0%, #9873ff 100%);
+  
+}
+
+/*animation-name: onHover; 
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; */
 
 .loginContainer {
   margin-top: 2.75rem;
