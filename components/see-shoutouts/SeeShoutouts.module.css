@@ -11,16 +11,25 @@
 .arrowIcon {
   position: relative;
   top: 0.375rem;
-  width: 1.625rem;
-  height: 1.291rem;
+  width: 24px;
+  height: 24px;
 }
 
-.seeShoutoutContainer {
+.seeShoutoutBtn {
   width: 10.938rem;
   height: 2.5rem;
+  color: #f0ebff;
   font-family: Inter-Regular, Helvetica, Arial, sans-serif;
   border: 1px solid #f0ebff;
   border-radius: 40px;
   padding: 8px 16px;
   font-size: 0.875rem;
+  transition: color 300ms, border 300ms;
 }
+
+.seeShoutoutBtn:hover {
+  border: 1px solid #9873ff;
+  color: #9873ff;
+}
+
+

@@ -6,7 +6,7 @@ const SeeShoutouts = (props: { employeeId: string }, key: number) => {
     const { employeeId } = props;
   return (
     <div>
-      <a className={styles.seeShoutoutContainer} href={`/user/${(employeeId)}`}>
+      <a className={styles.seeShoutoutBtn} href={`/user/${(employeeId)}`}>
         See shoutouts <ArrowRightIcon className={styles.arrowIcon} />
       </a>
     </div>
