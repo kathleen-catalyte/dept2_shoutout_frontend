@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { BasicProfile } from "ts/interfaces";
 
-import SeeShoutouts from "../see-shoutouts";
+import SeeShoutouts from "../see-shoutouts/see-shoutouts";
 import styles from "./SearchResultsList.module.css";
 
 const SearchResultsList: NextPage = () => {
