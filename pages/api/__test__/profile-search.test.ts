@@ -1,7 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { createMocks, RequestMethod } from 'node-mocks-http';
 
-import userProfile from '../profile/[id]';
+import profileSearch from '../profile/search';
+import mockProfiles from './mock-profiles.json';
 
 //Mocking some used Auth0 methods to bypass Auth0.
 jest.mock('@auth0/nextjs-auth0', () => ({
@@ -13,30 +14,29 @@ jest.mock('@auth0/nextjs-auth0', () => ({
     .mockImplementation((component, ignore) => component),
 }));
 
-//seperate file i have to mock some user data.
-const mockUser = require('./mockuser.json');
-
-//Using the mocked user data and mocking fetching the data.
+//Using the mocked profile data and mocking fetching the data.
 global.fetch = jest.fn(() =>
   Promise.resolve({
-    json: () => Promise.resolve(mockUser),
+    json: () => Promise.resolve(mockProfiles),
   })
 ) as jest.Mock;
 
 //start testing
-describe('/api/profile/[ID] API Endpoint', () => {
+describe('/api/profile/search API Endpoint', () => {
   //using CreateMocks from node-mocks-http to mock RES and REQ
-  function mockRequestResponse(method: RequestMethod = 'GET') {
+  const mockRequestResponse = (method: RequestMethod = 'GET') => {
     const { req, res }: { req: NextApiRequest; res: NextApiResponse } =
-      createMocks({ method });
-    req.query = { id: '8' };
+      createMocks({
+        method,
+      });
+    req.query = { name: 'mar' };
     return { req, res };
-  }
+  };
 
   //Testing our dummy data.
   it('Uses dev data', async () => {
     const { req, res } = mockRequestResponse();
-    await userProfile(req, res);
+    await profileSearch(req, res);
 
     expect(res.statusCode).toBe(200);
     expect(res.getHeaders()).toEqual({ 'content-type': 'application/json' });
@@ -48,7 +48,7 @@ describe('/api/profile/[ID] API Endpoint', () => {
     //setting apihost for the if statement
     process.env.API_HOST = 'something';
     const { req, res } = mockRequestResponse();
-    await userProfile(req, res);
+    await profileSearch(req, res);
 
     expect(res.statusCode).toBe(200);
     expect(res.getHeaders()).toEqual({ 'content-type': 'application/json' });

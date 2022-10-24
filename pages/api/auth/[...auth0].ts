@@ -6,10 +6,10 @@ export default handleAuth({
       await handleLogin(req, res, {
         authorizationParams: {
           audience: process.env.AUTH0_AUDIENCE,
-        }
+        },
       });
     } catch (error: any) {
       res.status(error.status || 400).end(error.message);
     }
-  }
+  },
 });

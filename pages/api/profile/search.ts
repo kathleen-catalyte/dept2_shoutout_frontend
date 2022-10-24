@@ -2,7 +2,7 @@
 import { getAccessToken, withApiAuthRequired } from '@auth0/nextjs-auth0';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default withApiAuthRequired(async function profilesSearch(
+export default withApiAuthRequired(async function profileSearch(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
