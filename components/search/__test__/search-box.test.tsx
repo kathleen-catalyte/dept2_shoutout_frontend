@@ -8,9 +8,11 @@ import SearchBox from '../search-box';
 import styles from '../SearchBox.module.css';
 
 describe('SearchBox', () => {
-  it('renders the search box input with placeholder text and disabled button', () => {
+  it('renders the search box input with inactive search icon, placeholder text, disabled submit button', () => {
     render(<SearchBox />);
+    const searchIcon = screen.getByTestId('search icon');
 
+    expect(searchIcon).toHaveClass('magnifyingGlassInactive');
     expect(screen.getByRole('text')).toHaveAttribute(
       'placeholder',
       'Search for teammates'
@@ -26,7 +28,7 @@ describe('SearchBox', () => {
     expect(screen.getByTestId('clear search')).toBeTruthy();
   });
 
-  it('clicking clear button clears input text, disables clear button, disables submit button, and retains input focus', async () => {
+  it('clicking clear button clears input text, disables clear button, disables submit button, retains input focus', async () => {
     render(<SearchBox />);
     const inputElement = screen.getByRole('text');
     await userEvent.type(inputElement, 'test@email.com');
@@ -38,12 +40,16 @@ describe('SearchBox', () => {
     expect(document.activeElement).toBe(inputElement);
   });
 
-  it('on blur of search that contains a valid input');
-  // it('handles onCLick', () => {
-  //   const onClick = jest.fn();
-  //   render(<SearchBox />);
-  //   const buttonElement = screen.getByText('Search');
-  //   fireEvent.click(buttonElement);
-  //   expect(onClick).toHaveBeenCalledTimes(1);
-  // })
+  it('on blur of search that contains a valid input, the submit and clear buttons remain enabled', async () => {
+    render(<SearchBox />);
+    const inputElement = screen.getByRole('text');
+    await userEvent.type(inputElement, 'test@email.com');
+    act(() => {
+      inputElement.blur();
+    });
+
+    expect(screen.getByText('Search')).toBeEnabled();
+    expect(screen.getByTestId('clear search')).toBeTruthy();
+    expect(document.activeElement).not.toBe(inputElement);
+  });
 });

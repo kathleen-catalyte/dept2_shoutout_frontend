@@ -57,6 +57,7 @@ const SearchBox = () => {
         />
         <div className={styles.magnifyingGlassWrapper}>
           <MagnifyingGlassIcon
+            data-testid='search icon'
             className={
               focused || inputExists()
                 ? styles.magnifyingGlassActive
