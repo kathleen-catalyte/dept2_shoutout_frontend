@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { BasicProfile } from "ts/interfaces";
 
+import Logout from "@/components/logout/logout";
 import SearchBox from "@/components/search/search-box";
 import SearchResult from "@/components/search-result/search-result";
 import Shoutouts from "@/components/shoutouts";
@@ -50,16 +51,16 @@ const Home: NextPage = () => {
           {data ?
             <SearchResult childToParent={childToParent} /> : <Shoutouts />}
 
-
-          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-          <a className={styles.logout} href="/api/auth/logout">
-            Logout
-          </a>
+          <Logout />
         </>
       ) : (
         <>
-          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-          <a href="/api/auth/login">Login</a>
+          <div className={styles.loginContainer}>
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+            <a className={styles.login} href="/api/auth/login">
+              Log In
+            </a>
+          </div>
         </>
       )}
       {/*remove following SearchBox */}
