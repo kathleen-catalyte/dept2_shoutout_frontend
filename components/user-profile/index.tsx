@@ -1,4 +1,3 @@
-import { MapIcon, UsersIcon } from '@heroicons/react/24/outline'
 import { ArrowSmallLeftIcon } from '@heroicons/react/24/solid'
 import { Box, Tab, Tabs, Typography } from '@mui/material';
 import Router from 'next/router';
@@ -54,7 +53,7 @@ const UserProfile = (id: any) => {
                             <ProfilePicture picture={profileData.image192} /> </div> : null}
 
                     <a className={styles.name}>@{profileData.name}</a>
-                    
+
 
                 </div>
                 <div className={styles.shoutoutsContainer}>
