@@ -1,16 +1,19 @@
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/solid/';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { ChangeEvent, useRef, useState } from 'react';
 
 import fetch from '@/lib/fetch';
 
 import styles from './SearchBox.module.css';
 
-const SearchBox = () => {
+const SearchBox = ({
+  childToParent,
+}: {
+  childToParent: (childdata: boolean) => void;
+}) => {
   const [focused, setFocused] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
-  const router = useRouter();
 
   const inputExists = () => inputValue.length >= 1;
   const handleFocus = () => setFocused(true);
@@ -21,10 +24,12 @@ const SearchBox = () => {
   const handleFieldClear = () => {
     setInputValue('');
     inputRef.current?.focus();
+    sessionStorage.clear();
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    childToParent(false);
     sessionStorage.removeItem('profileSearchResults');
 
     if (inputRef.current !== null) {
@@ -34,7 +39,7 @@ const SearchBox = () => {
       );
 
       sessionStorage.setItem('profileSearchResults', JSON.stringify(response));
-      router.push('/search-results/');
+      childToParent(true);
     }
   };
 
@@ -43,8 +48,8 @@ const SearchBox = () => {
       <form onSubmit={handleSubmit}>
         <input
           name='search field'
-          type='text'
           role='text'
+          type='text'
           className={`${styles.searchInput} ${
             (focused || inputExists()) && styles.searchInputWithText
           }`}
