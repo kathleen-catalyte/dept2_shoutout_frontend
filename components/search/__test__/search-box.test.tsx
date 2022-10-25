@@ -29,7 +29,13 @@ jest.mock('next/router', () => ({
 
 describe('SearchBox', () => {
   it('should render inactive search box with inactive search icon, placeholder text and disabled submit button when component initially loads', () => {
-    render(<SearchBox />);
+    render(
+      <SearchBox
+        childToParent={function (childdata: boolean): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
+    );
 
     expect(screen.getByTestId('search icon')).toHaveClass(
       'magnifyingGlassInactive'
@@ -42,7 +48,13 @@ describe('SearchBox', () => {
   });
 
   it('should enable clear and submit buttons when inputing at least one character in search box', async () => {
-    render(<SearchBox />);
+    render(
+      <SearchBox
+        childToParent={function (childdata: boolean): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
+    );
     await userEvent.type(screen.getByRole('text'), 't');
 
     expect(screen.getByText('Search')).toBeEnabled();
@@ -50,7 +62,13 @@ describe('SearchBox', () => {
   });
 
   it('should clear input text, retain input focus and disable clear and submit buttons, when clicking clear button', async () => {
-    render(<SearchBox />);
+    render(
+      <SearchBox
+        childToParent={function (childdata: boolean): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
+    );
     const inputElement = screen.getByRole('text');
     await userEvent.type(inputElement, 'test@email.com');
     await userEvent.click(screen.getByTestId('clear search'));
@@ -62,7 +80,13 @@ describe('SearchBox', () => {
   });
 
   it('should keep the submit and clear buttons enabled, when focus is removed from search that contains a valid input', async () => {
-    render(<SearchBox />);
+    render(
+      <SearchBox
+        childToParent={function (childdata: boolean): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
+    );
     const inputElement = screen.getByRole('text');
     await userEvent.type(inputElement, 'test@email.com');
     act(() => {
@@ -75,7 +99,13 @@ describe('SearchBox', () => {
   });
 
   it('should return matching object from session storage, when passing search query to handleSubmit', async () => {
-    render(<SearchBox />);
+    render(
+      <SearchBox
+        childToParent={function (childData: boolean): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
+    );
     await userEvent.type(screen.getByRole('text'), 'a');
     await userEvent.click(screen.getByText('Search'));
 

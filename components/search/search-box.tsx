@@ -1,5 +1,4 @@
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/solid/';
-import Router, { useRouter } from 'next/router';
 import { ChangeEvent, useRef, useState } from 'react';
 
 import fetch from '@/lib/fetch';
@@ -9,7 +8,7 @@ import styles from './SearchBox.module.css';
 const SearchBox = ({
   childToParent,
 }: {
-  childToParent: (childdata: boolean) => void;
+  childToParent: (childData: boolean) => void;
 }) => {
   const [focused, setFocused] = useState(false);
   const [inputValue, setInputValue] = useState('');
