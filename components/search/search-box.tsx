@@ -1,12 +1,12 @@
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/solid/';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { ChangeEvent, useRef, useState } from 'react';
 
 import fetch from '@/lib/fetch';
 
 import styles from './SearchBox.module.css';
 
-const SearchBox = ({ childToParent }: any) => {
+const SearchBox = ({ childToParent }: { childToParent: (childdata: boolean) => void }) => {
   const [focused, setFocused] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
@@ -25,6 +25,7 @@ const SearchBox = ({ childToParent }: any) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    childToParent(false);
     sessionStorage.removeItem('profileSearchResults');
 
     if (inputRef.current !== null) {

@@ -20,7 +20,7 @@ const Home: NextPage = () => {
   }
   const [session, setSessionStorage] = useState<BasicProfile[]>([]);
   const [data, setData] = useState(false)
-  const childToParent = (childdata: any) => {
+  const childToParent = (childdata: boolean) => {
     setData(childdata);
     if (sessionStorage.getItem('profileSearchResults')) {
       const storage = sessionStorage.getItem('profileSearchResults')

@@ -1,11 +1,12 @@
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import Router from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { BasicProfile } from 'ts/interfaces'
 
 import SearchResultBox from './search-result-box'
 import styles from './SearchBoxContainer.module.css'
 
-const SearchResult = ({ childToParent }: any) => {
+const SearchResult = ({ childToParent }: { childToParent: (childdata: boolean) => void }) => {
     const [storedSearchResults, setStoredSearchResults] = useState<BasicProfile[]>([]);
 
     useEffect(() => {
@@ -21,7 +22,7 @@ const SearchResult = ({ childToParent }: any) => {
     return (
         <div className={styles.container}>
             <div className={styles.words}>
-                <a className={styles.searchresults}>
+                <a className={styles.searchResults}>
                     Search Results
                 </a>
                 <div data-testid="clear"
