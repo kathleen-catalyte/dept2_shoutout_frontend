@@ -5,7 +5,7 @@ import styles from "./SeeShoutouts.module.css";
 const SeeShoutouts = (props: { employeeId: string }, key: number) => {
     const { employeeId } = props;
   return (
-    <div>
+    <div data-testid="custom-element">
       <a className={styles.seeShoutoutBtn} href={`/user/${(employeeId)}`}>
         See shoutouts <ArrowRightIcon className={styles.arrowIcon} />
       </a>

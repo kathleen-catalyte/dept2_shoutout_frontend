@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 
-import SeeShoutouts from './see-shoutouts/see-shoutouts.tsx';
+import SeeShoutouts from './../see-shoutouts.tsx';
 
 
 // TEST BEHAVIOUR, NOT THE IMPLEMENTATION
@@ -14,7 +14,7 @@ test('renders see-shoutout component', () => {
     render(<SeeShoutouts />)
     
     // 2) Finding the elements
-    const navElement = screen.getByText(/see shoutouts/i);
+    const navElement = screen.getByTestId('custom-element');
 
     // 3) Assertion
     expect(navElement).toBeInTheDocument();
