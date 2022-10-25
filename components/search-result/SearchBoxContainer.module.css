@@ -12,15 +12,20 @@
 .searchresults{
     font-family: Inter-Regular, Helvetica, Arial, sans-serif;
     float: left;
+    font-weight: 600;
 }
 .clearButton{
     font-family: Inter-Regular, Helvetica, Arial, sans-serif;
     vertical-align: top;
-        float: right;
-    color:rgb(49, 48, 48)
+    float: right;
+    color:rgb(49, 48, 48);
 }
 .clearButton:hover{
     cursor: pointer;
+}
+.clearWords{
+    vertical-align:top;
+    font-weight: 600;
 }
 
 .words{
@@ -32,7 +37,7 @@
 .xicon{
     grid-area: 1 / 1 / 2 / 2;
     position: relative;
-    top: 5.5px;
+    bottom: 3px;
     height: 1.5rem;
     width: 1.5rem;
 }
