@@ -24,7 +24,8 @@ const SearchResult = ({ childToParent }: any) => {
                 <a className={styles.searchresults}>
                     Search Results
                 </a>
-                <div className={styles.clearButton} onClick={ClearSearchResults}> <XMarkIcon className={styles.xicon} /> <a>Clear Results</a></div>
+                <div data-testid="clear"
+                    className={styles.clearButton} onClick={ClearSearchResults}> <XMarkIcon className={styles.xicon} /> <a>Clear Results</a></div>
             </div>
             {storedSearchResults && storedSearchResults?.map((profile: BasicProfile, idx: React.Key) => {
                 return (

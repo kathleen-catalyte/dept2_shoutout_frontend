@@ -5,7 +5,6 @@ import styles from './SearchBox.module.css'
 
 const SearchResultBox = (prop: any) => {
     const { data } = prop
-    console.log(data)
     return (
         <div className={styles.container}>
             <a className={styles.name}>@{data?.name}</a>
