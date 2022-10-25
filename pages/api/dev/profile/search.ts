@@ -3,6 +3,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { BasicProfile } from 'ts/interfaces';
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
+  console.log(req);
+  console.log(res);
   const queriedName: string = (req.query.name as string).toLowerCase();
   const queriedEmail: string = (req.query.email as string).toLowerCase();
   let matchingProfilesInDb: BasicProfile[] = [];
