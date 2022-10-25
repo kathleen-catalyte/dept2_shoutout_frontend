@@ -4,7 +4,7 @@ import { createMocks, RequestMethod } from 'node-mocks-http';
 import profileSearch from '../profile/search';
 import mockProfiles from './mock-profiles.json';
 
-//Mocking some used Auth0 methods to bypass Auth0.
+//mocks used Auth0 methods to bypass Auth0
 jest.mock('@auth0/nextjs-auth0', () => ({
   withApiAuthRequired: jest
     .fn()
@@ -14,16 +14,14 @@ jest.mock('@auth0/nextjs-auth0', () => ({
     .mockImplementation((component, ignore) => component),
 }));
 
-//Using the mocked profile data and mocking fetching the data.
+//uses the mocked profile data and mocks fetching the data
 global.fetch = jest.fn(() =>
   Promise.resolve({
     json: () => Promise.resolve(mockProfiles),
   })
 ) as jest.Mock;
 
-//start testing
 describe('/api/profile/search API Endpoint', () => {
-  //using CreateMocks from node-mocks-http to mock RES and REQ
   const mockRequestResponse = (method: RequestMethod = 'GET') => {
     const { req, res }: { req: NextApiRequest; res: NextApiResponse } =
       createMocks({
@@ -33,8 +31,7 @@ describe('/api/profile/search API Endpoint', () => {
     return { req, res };
   };
 
-  //Testing our dummy data.
-  it('Uses dev data', async () => {
+  it('should return positive result, when fetching profiles using dev data', async () => {
     const { req, res } = mockRequestResponse();
     await profileSearch(req, res);
 
@@ -43,9 +40,8 @@ describe('/api/profile/search API Endpoint', () => {
     expect(res.statusMessage).toEqual('OK');
   });
 
-  //testing the data provided by us, while also bypassing auth0 using mocks.
-  it('Uses the proxy server', async () => {
-    //setting apihost for the if statement
+  it('should return positive result, when fetching profiles using the proxy server, while also bypassing auth0 using mocks', async () => {
+    //sets apihost for the if statement to be true
     process.env.API_HOST = 'something';
     const { req, res } = mockRequestResponse();
     await profileSearch(req, res);
