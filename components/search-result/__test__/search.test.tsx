@@ -1,6 +1,3 @@
-import '@testing-library/jest-dom/extend-expect'
-import '@testing-library/react';
-
 import { fireEvent, screen, waitFor } from '@testing-library/dom'
 import Home from 'pages';
 import { Container, render } from "react-dom";
