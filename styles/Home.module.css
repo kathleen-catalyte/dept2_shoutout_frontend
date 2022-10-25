@@ -23,12 +23,43 @@
   margin-top: 2.625rem;
 }
 
-.logout {
-  padding-bottom: 1rem;
+.loginContainer {
+  width: 8.25rem;
+  height: 2.875rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, #1b1c1f 0%, #1b1c1f 100%);
+  padding: 0.75rem 2.5rem;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #340f99 0%, #9873ff 100%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: -1;
+  border-radius: 8px;
+}
+
+.login:hover::before {
+  opacity: 1;
+}
+
+.loginContainer {
+  margin-top: 2.75rem;
 }
 
 .searchContainer {
-  margin-top: -.5rem;
+  margin-top: -0.5rem;
   margin-bottom: 1.55rem;
 }
 
@@ -40,6 +71,6 @@
 .title {
   font-size: 1.91rem;
   font-family: Inter-SemiBold;
-  margin-bottom: -.3rem;
-  margin-top:1.75rem;
+  margin-bottom: -0.3rem;
+  margin-top: 1.75rem;
 }
