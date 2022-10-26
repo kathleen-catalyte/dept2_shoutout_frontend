@@ -10,16 +10,16 @@ const ShoutoutComp = (props: { shoutout: Shoutout }, key: number) => {
   return (
     <div>
       {' '}
-      <div className={styles.avatars}>
-        {shoutout.recipients?.map((recipient) => (
-          <span key={recipient.employeeId} className={styles.avatar}>
-            <ProfilePicture
-              picture={recipient.image72 ? recipient.image72 : ''}
-            />
-          </span>
-        ))}
-      </div>
       <div className={styles.shoutcontainer}>
+        <div className={styles.avatars}>
+          {shoutout.recipients?.map((recipient) => (
+            <span key={recipient.employeeId} className={styles.avatar}>
+              <ProfilePicture
+                picture={recipient.image72 ? recipient.image72 : ''}
+              />
+            </span>
+          ))}
+        </div>
         <p className={styles.text}>
           {shoutout.elements?.map(
             (x: Element, idx: React.Key | null | undefined) => {
