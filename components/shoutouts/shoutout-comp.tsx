@@ -14,7 +14,7 @@ const ShoutoutComp = (props: { shoutout: Shoutout }, key: number) => {
         {shoutout.recipients?.map((recipient) => (
           <span key={recipient.employeeId} className={styles.avatar}>
             <ProfilePicture
-              picture={recipient.image192 ? recipient.image192 : ''}
+              picture={recipient.image72 ? recipient.image72 : ''}
             />
           </span>
         ))}
