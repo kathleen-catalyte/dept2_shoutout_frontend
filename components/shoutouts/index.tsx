@@ -1,12 +1,12 @@
 import { Shoutout } from 'src/interfaces/shoutout';
-import useSWR from "swr";
+import useSWR from 'swr';
 
-import fetch from "@/lib/fetch";
+import fetch from '@/lib/fetch';
 
-import ShoutoutComp from "./shoutoutcomp";
+import ShoutoutComp from './shoutout-comp';
 
 const Shoutouts = () => {
-  const { data, error } = useSWR("/api/shoutouts/latest", fetch);
+  const { data, error } = useSWR('/api/shoutouts/latest', fetch);
   const shoutOutData = data as unknown as Shoutout[];
 
   if (error) return <p>Something went wrong.</p>;
