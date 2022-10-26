@@ -1,11 +1,30 @@
 @font-face {
   font-family: Inter-Regular;
-  src: url("../../fonts/Inter/static/Inter-Regular.ttf");
+  src: url('../../fonts/Inter/static/Inter-Regular.ttf');
 }
 
 @font-face {
   font-family: Inter-SemiBold;
-  src: url("../../fonts/Inter/static/Inter-SemiBold.ttf");
+  src: url('../../fonts/Inter/static/Inter-SemiBold.ttf');
+}
+
+.avatars {
+  display: inline-flex;
+}
+
+.avatar {
+  position: relative;
+  border: 0.14rem solid #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 1.85rem;
+  height: 1.85rem;
+  margin-left: -0.6rem;
+}
+
+.avatar > ProfilePicture {
+  width: 100%;
+  display: block;
 }
 
 .hyper {
