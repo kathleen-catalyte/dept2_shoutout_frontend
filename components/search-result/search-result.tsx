@@ -21,6 +21,7 @@ const SearchResult = ({ childToParent }: { childToParent: (childdata: boolean) =
     }
     return (
         <div className={styles.container}>
+            
             <div className={styles.words}>
                 <a className={styles.searchResults}>
                     Search Results
