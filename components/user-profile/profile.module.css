@@ -1,80 +1,75 @@
 @font-face {
-    font-family: 'Inter';
-    src: url('../../fonts/inter/Inter-Regular.ttf');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'Inter';
+  src: url('../../fonts/inter/Inter-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
 }
-.profilePageContainer{
-    color:white;
-    width: 38.5rem;
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 1%;
+.profilePageContainer {
+  color: white;
+  width: 38.5rem;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1%;
 }
-.arrowIcon{
-    height: 16px;
-    width: 18px;
-    font-weight: 199;
-    color:#6A7078;
-    grid-area: 1 / 1 / 2 / 2;
-    position: relative;
-    top: 2.5px;
+.arrowIcon {
+  height: 16px;
+  width: 18px;
+  font-weight: 199;
+  color: #6a7078;
+  grid-area: 1 / 1 / 2 / 2;
+  position: relative;
+  top: 2.5px;
 }
-.backToShoutOut{
-    padding-left: 10px;
-    color: white;
-    font-family: inter;
-    grid-area: 1 / 2 / 2 / 3; 
+.backToShoutOut {
+  padding-left: 10px;
+  color: white;
+  font-family: inter;
+  grid-area: 1 / 2 / 2 / 3;
 }
-.backButton{
-    padding-top: 10%;
-    left:8px;
-    position: relative;
-    width: fit-content;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: .5fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+.backButton {
+  padding-top: 10%;
+  left: 8px;
+  position: relative;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.5fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
-.hoverbutton:hover{
-    cursor: pointer;
+.hoverbutton:hover {
+  cursor: pointer;
 }
-.profilePicture{
-    padding-top: 14%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    
+.profilePicture {
+  padding-top: 14%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
-.picture{
-    position: relative;
-    margin:0 auto;
-    width: 5.188rem;
-    height: 5rem;
-    border: 3px solid white;
-    border-radius: 50%;
+.picture {
+  position: relative;
+  margin: 0 auto;
+  width: 5.188rem;
+  height: 5rem;
+  border: 3px solid white;
+  border-radius: 50%;
 }
-.name{
-    padding-top: 23px;
-    color: #9873FF;
-    font-family: inter;
-    font-size: 26px;
-    font-weight: 700;
+.name {
+  padding-top: 23px;
+  color: #9873ff;
+  font-family: inter;
+  font-size: 26px;
+  font-weight: 700;
 }
-.shoutoutsContainer{
-    padding-top: 47px;
-    display: flex;
-    flex-direction: column;
+.shoutoutsContainer {
+  padding-top: 47px;
+  display: flex;
+  flex-direction: column;
 }
-.shoutout{
-    margin:0 auto;
-
+.shoutout {
+  margin: 0 auto;
 }
-
-
-
