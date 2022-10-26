@@ -2,11 +2,7 @@ import { render, screen } from '@testing-library/react'
 
 import ShoutoutComp from '../shoutoutcomp';
 
-
-
 const mockShoutout = require('./mockShoutout.json')
-
-
 
 // TEST BEHAVIOUR, NOT THE IMPLEMENTATION
 // Test that see-shoutouts button takes employeeId of search componenet and navigates to profile page
