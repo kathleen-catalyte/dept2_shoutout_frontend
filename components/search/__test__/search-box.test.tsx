@@ -9,6 +9,9 @@ import mockProfiles from './mock-profiles.json';
 
 const childToParent = jest.fn();
 
+jest.mock('next/router', () => ({ replace: jest.fn() }))
+
+
 global.fetch = jest.fn(() =>
   Promise.resolve({
     json: () => Promise.resolve(mockProfiles),

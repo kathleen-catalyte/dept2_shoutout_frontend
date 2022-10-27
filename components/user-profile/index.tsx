@@ -23,7 +23,7 @@ const UserProfile = (id: any) => {
     setTabIndex(newTabIndex);
   };
   const BackToHome = () => {
-    Router.push('/');
+    Router.back();
   };
   const given = (shoutoutsGiven: Shoutout[]) => {
     const length = shoutoutsGiven.length;
