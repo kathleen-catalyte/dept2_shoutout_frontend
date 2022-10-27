@@ -1,4 +1,5 @@
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/solid/';
+import Router, { useRouter } from 'next/router';
 import { ChangeEvent, useRef, useState } from 'react';
 
 import fetch from '@/lib/fetch';
@@ -13,7 +14,6 @@ const SearchBox = ({
   const [focused, setFocused] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
-  const router = useRouter()
 
   const inputExists = () => inputValue.length >= 1;
   const handleFocus = () => setFocused(true);
@@ -37,7 +37,7 @@ const SearchBox = ({
       const response = await fetch(
         `api/profile/search?name=${searchQuery}&email=${searchQuery}`
       );
-      router.push({
+      Router.replace({
         pathname: '/',
         query: { name: searchQuery, email: searchQuery }
       },
