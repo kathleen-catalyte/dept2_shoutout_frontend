@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "test": "jest --coverage"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^1.9.1",
@@ -30,8 +31,10 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@faker-js/faker": "^7.5.0",
+    "@testing-library/dom": "^8.19.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/mocha": "^10.0.0",
     "@types/node": "^18.0.6",
     "@types/react": "^18.0.15",
