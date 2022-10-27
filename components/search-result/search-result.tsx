@@ -1,4 +1,4 @@
-import { XMarkIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/24/solid'
 import Router from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { BasicProfile } from 'ts/interfaces'
@@ -17,7 +17,7 @@ const SearchResult = ({ childToParent }: { childToParent: (childdata: boolean) =
     }, [])
     const ClearSearchResults = () => {
         sessionStorage.clear()
-        Router.push({
+        Router.replace({
             pathname: '/',
         },
             undefined, { shallow: true }

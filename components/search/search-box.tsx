@@ -10,6 +10,7 @@ const SearchBox = ({ childToParent }: { childToParent: (childdata: boolean) => v
   const [focused, setFocused] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter()
 
   const inputExists = () => inputValue.length >= 1;
   const handleFocus = () => setFocused(true);
@@ -33,7 +34,7 @@ const SearchBox = ({ childToParent }: { childToParent: (childdata: boolean) => v
       const response = await fetch(
         `api/profile/search?name=${searchQuery}&email=${searchQuery}`
       );
-      Router.push({
+      router.push({
         pathname: '/',
         query: { name: searchQuery, email: searchQuery }
       },

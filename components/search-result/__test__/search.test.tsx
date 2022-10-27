@@ -1,4 +1,5 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom'
+import Router from 'next/router'
 import Home from 'pages';
 import { Container, render } from "react-dom";
 import ReactDOM from 'react-dom/client';
@@ -6,7 +7,10 @@ import { act } from 'react-dom/test-utils';
 
 import SearchResult from '../search-result';
 
+jest.mock('next/router', () => ({ replace: jest.fn() }))
+
 const childToParent = jest.fn()
+
 
 
 //Mocking some used Auth0 methods to bypass Auth0.
@@ -113,6 +117,7 @@ describe('getUserInfo', () => {
         act(() => {
             ReactDOM.createRoot(container!).render(<SearchResult childToParent={childToParent} />);
         });
+
         fireEvent.click(screen.getByTestId('clear'))
         const value = window.sessionStorage.getItem('profileSearchResults')
         await waitFor(() => {
