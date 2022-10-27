@@ -1,0 +1,47 @@
+{
+    "id": 1,
+    "text": "hi <@Beto> ",
+    "createDate": "2022-10-12T18:42:45.471Z",
+    "authorId": "1",
+    "recipients": [
+        {
+            "employeeId": "2",
+            "email": "Joe.Herman70@hotmail.com",
+            "team": "DPUS",
+            "country": "US",
+            "name": "Beto",
+            "image72": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/101.jpg",
+            "image192": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/995.jpg",
+            "image512": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/118.jpg"
+        }
+    ],
+    "elements": [
+        {
+            "id": 1,
+            "text": "hi",
+            "type": "text",
+            "employeeId": null
+        },
+        {
+            "id": 2,
+            "text": "Beto",
+            "type": "user",
+            "employeeId": "2"
+        }
+    ],
+    "channel": {
+        "id": "Quos harum fugit explicabo est est quam quo voluptas.",
+        "slackId": "9642abed-f73b-4ff3-a5ce-ed4a4e5aff3e",
+        "name": "Timmy"
+    },
+    "author": {
+        "employeeId": 1,
+        "email": "Darren_Larson45@gmail.com",
+        "team": "DPUS",
+        "country": "US",
+        "name": "Shouty",
+        "image72": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1157.jpg",
+        "image192": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/763.jpg",
+        "image512": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/99.jpg"
+    }
+}
