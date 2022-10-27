@@ -3,7 +3,7 @@ import useSWR from 'swr';
 
 import fetch from '@/lib/fetch';
 
-import ShoutoutComp from './shoutout-comp';
+import ShoutoutComp from './shoutoutcomp';
 
 const Shoutouts = () => {
   const { data, error } = useSWR('/api/shoutouts/latest', fetch);

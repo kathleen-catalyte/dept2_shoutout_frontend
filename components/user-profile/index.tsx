@@ -11,7 +11,7 @@ import fetch from '@/lib/fetch';
 
 import Logout from '../logout/logout';
 import ProfilePicture from '../profile-picture';
-import ShoutoutComp from '../shoutouts/shoutout-comp';
+import ShoutoutComp from '../shoutouts/shoutoutcomp';
 import styles from './profile.module.css';
 
 const UserProfile = (id: any) => {
