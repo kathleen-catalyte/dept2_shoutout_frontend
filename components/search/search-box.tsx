@@ -1,4 +1,5 @@
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/solid/';
+import Router, { useRouter } from 'next/router';
 import { ChangeEvent, useRef, useState } from 'react';
 
 import fetch from '@/lib/fetch';
@@ -36,6 +37,12 @@ const SearchBox = ({
       const response = await fetch(
         `api/profile/search?name=${searchQuery}&email=${searchQuery}`
       );
+      Router.replace({
+        pathname: '/',
+        query: { name: searchQuery, email: searchQuery }
+      },
+        undefined, { shallow: true }
+      )
 
       sessionStorage.setItem('profileSearchResults', JSON.stringify(response));
       childToParent(true);
