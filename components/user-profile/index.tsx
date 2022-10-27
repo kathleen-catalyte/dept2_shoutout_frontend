@@ -23,7 +23,7 @@ const UserProfile = (id: any) => {
     setTabIndex(newTabIndex);
   };
   const BackToHome = () => {
-    Router.push("/");
+    Router.back();
   };
   const given = (shoutoutsGiven: Shoutout[]) => {
     const length = shoutoutsGiven.length;
@@ -39,8 +39,8 @@ const UserProfile = (id: any) => {
   if (typeof profileData == "undefined") return <p>Hang tight...</p>;
   if (profileData.statusCode) return <p>Unauthorized.</p>;
   return (
-      <div>
-          <Logout />
+    <div>
+      <Logout />
       <div className={styles.profilePageContainer}>
         <p
           data-testid="back"

@@ -17,11 +17,16 @@ const SearchResult = ({ childToParent }: { childToParent: (childdata: boolean) =
     }, [])
     const ClearSearchResults = () => {
         sessionStorage.clear()
+        Router.push({
+            pathname: '/',
+        },
+            undefined, { shallow: true }
+        )
         childToParent(false)
     }
     return (
         <div className={styles.container}>
-            
+
             <div className={styles.words}>
                 <a className={styles.searchResults}>
                     Search Results
