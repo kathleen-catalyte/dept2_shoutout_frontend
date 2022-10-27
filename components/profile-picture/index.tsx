@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
 
-import styles from './picture.module.css';
-
 const ProfilePicture = ({ picture }: { picture: string }) => {
   return (
     <Image
