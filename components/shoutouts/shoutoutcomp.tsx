@@ -7,7 +7,7 @@ import styles from "./Shoutouts.module.css";
 const ShoutoutComp = (props: { shoutout: Shoutout }, key: number) => {
   const { shoutout } = props;
   return (
-    <div className={styles.shoutcontainer}>
+    <div data-testid="custom-element" className={styles.shoutcontainer}>
       <p className={styles.text}>
         {shoutout.elements?.map(
           (x: Element, idx: React.Key | null | undefined) => {
