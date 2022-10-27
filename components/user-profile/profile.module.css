@@ -55,14 +55,14 @@
   margin: 0 auto;
   width: 5.188rem;
   height: 5rem;
-  border: 3px solid white;
+  border: 0.15rem solid white;
   border-radius: 50%;
 }
 .name {
   padding-top: 23px;
   color: #9873ff;
   font-family: inter;
-  font-size: 26px;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 .shoutoutsContainer {
