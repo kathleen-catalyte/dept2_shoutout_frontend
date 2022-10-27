@@ -10,7 +10,7 @@ const ShoutoutComp = (props: { shoutout: Shoutout }, key: number) => {
   return (
     <div>
       {' '}
-      <div className={styles.shoutcontainer}>
+      <div data-testid='custom-element' className={styles.shoutcontainer}>
         <div className={styles.avatars}>
           {shoutout.recipients?.map((recipient) => (
             <span key={recipient.employeeId} className={styles.avatar}>
