@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['cloudflare-ipfs.com', 'avatars.slack-edge.com']
+    domains: ['cloudflare-ipfs.com', 'avatars.slack-edge.com', 'secure.gravatar.com']
   }
 }
 
