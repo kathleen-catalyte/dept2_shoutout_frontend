@@ -1,14 +1,15 @@
-import { useUser } from '@auth0/nextjs-auth0';
-import type { NextPage } from 'next';
-import { useEffect, useState } from 'react';
-import { BasicProfile } from 'ts/interfaces';
+import { useUser } from "@auth0/nextjs-auth0";
+import type { NextPage } from "next";
+import { useEffect, useState } from "react";
+import { BasicProfile } from "ts/interfaces";
 
-import Logout from '@/components/logout/logout';
-import SearchBox from '@/components/search/search-box';
-import SearchResult from '@/components/search-result/search-result';
-import Shoutouts from '@/components/shoutouts';
+import Footer from "@/components/footer/footer";
+import Logout from "@/components/logout/logout";
+import SearchBox from "@/components/search/search-box";
+import SearchResult from "@/components/search-result/search-result";
+import Shoutouts from "@/components/shoutouts";
 // import ShoutoutsTemp from '@/components/shoutouts-temp'
-import styles from '@/styles/Home.module.css';
+import styles from "@/styles/Home.module.css";
 
 const Home: NextPage = () => {
   const { user, error, isLoading } = useUser();
@@ -24,8 +25,8 @@ const Home: NextPage = () => {
 
   const childToParent = (childData: boolean) => {
     setData(childData);
-    if (sessionStorage.getItem('profileSearchResults')) {
-      const storage = sessionStorage.getItem('profileSearchResults');
+    if (sessionStorage.getItem("profileSearchResults")) {
+      const storage = sessionStorage.getItem("profileSearchResults");
       if (storage) {
         setSessionStorage(JSON.parse(storage));
       }
@@ -33,7 +34,7 @@ const Home: NextPage = () => {
   };
 
   useEffect(() => {
-    if (sessionStorage.getItem('profileSearchResults')) {
+    if (sessionStorage.getItem("profileSearchResults")) {
       setData(true);
     }
   }, []);
@@ -62,13 +63,14 @@ const Home: NextPage = () => {
         <>
           <div className={styles.loginContainer}>
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-            <a className={styles.login} href='/api/auth/login'>
+            <a className={styles.login} href="/api/auth/login">
               Log In
             </a>
           </div>
         </>
       )}
       {/*remove following SearchBox */}
+      <Footer />
     </div>
   );
 };
