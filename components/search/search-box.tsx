@@ -37,12 +37,14 @@ const SearchBox = ({
       const response = await fetch(
         `api/profile/search?name=${searchQuery}&email=${searchQuery}`
       );
-      Router.replace({
-        pathname: '/',
-        query: { name: searchQuery, email: searchQuery }
-      },
-        undefined, { shallow: true }
-      )
+      Router.replace(
+        {
+          pathname: '/',
+          query: { name: searchQuery, email: searchQuery },
+        },
+        undefined,
+        { shallow: true }
+      );
 
       sessionStorage.setItem('profileSearchResults', JSON.stringify(response));
       childToParent(true);
