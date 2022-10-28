@@ -15,19 +15,6 @@
   margin-top: 0.19rem;
 }
 
-.avatarHidden {
-  visibility: hidden;
-  position: relative;
-  border: 0.13rem solid #ffffff;
-  background-color: #ffffff;
-  border-radius: 50%;
-  overflow: hidden;
-  width: 1.85rem;
-  height: 1.85rem;
-  margin-left: 1.55rem;
-  margin-top: 0.19rem;
-}
-
 .container {
   font-family: Inter-Regular, Helvetica, Arial, sans-serif;
   background-color: #ffffff17;
