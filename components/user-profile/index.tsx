@@ -1,6 +1,5 @@
-import { MapIcon, UsersIcon } from "@heroicons/react/24/outline";
 import { ArrowSmallLeftIcon } from "@heroicons/react/24/solid";
-import { Box, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Tab, Tabs } from "@mui/material";
 import Router from "next/router";
 import { useState } from "react";
 import { FullProfile } from "src/interfaces/profile";
@@ -19,7 +18,6 @@ const UserProfile = (id: any) => {
   const { data, error } = useSWR(`/api/profile/${Object.values(id)[0]}`, fetch);
   const profileData = data as unknown as FullProfile;
   const [tabIndex, setTabIndex] = useState(0);
-  console.log(document?.referrer);
   const prevPage = document?.referrer.toString()
 
   const handleTabChange = (event: any, newTabIndex: number) => {
