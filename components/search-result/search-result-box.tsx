@@ -9,9 +9,9 @@ const SearchResultBox = (userData: { data: BasicProfile }) => {
   const { data } = userData;
   return (
     <div className={styles.container}>
-      {/* <div>
+      <div className={data.image72 ? styles.avatar : styles.avatarHidden}>
         <ProfilePicture picture={data.image72 ? data.image72 : ''} />
-      </div> */}
+      </div>
       <a className={styles.name}>@{data?.name}</a>
       <div className={styles.btn}>
         <SeeShoutouts employeeId={data.employeeId} />
