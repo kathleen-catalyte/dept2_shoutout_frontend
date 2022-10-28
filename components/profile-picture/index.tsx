@@ -1,7 +1,7 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 
-const ProfilePicture = ({ picture }: { picture: string }) => {
+const ProfilePicture = ({ picture }: { picture: string | StaticImageData }) => {
   return (
     <Image
       src={picture}

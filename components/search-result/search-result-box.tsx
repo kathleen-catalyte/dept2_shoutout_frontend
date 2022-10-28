@@ -1,3 +1,4 @@
+import defaultAvatar from 'images/defaultAvatar.webp';
 import React from 'react';
 import { BasicProfile } from 'ts/interfaces';
 
@@ -7,10 +8,11 @@ import styles from './SearchResultBox.module.css';
 
 const SearchResultBox = (userData: { data: BasicProfile }) => {
   const { data } = userData;
+
   return (
     <div className={styles.container}>
-      <div className={data.image72 ? styles.avatar : styles.avatarHidden}>
-        <ProfilePicture picture={data.image72 ? data.image72 : ''} />
+      <div className={styles.avatar}>
+        <ProfilePicture picture={data.image72 ? data.image72 : defaultAvatar} />
       </div>
       <a className={styles.name}>@{data?.name}</a>
       <div className={styles.btn}>
