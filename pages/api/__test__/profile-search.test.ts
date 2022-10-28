@@ -27,7 +27,7 @@ describe('/api/profile/search API Endpoint', () => {
       createMocks({
         method,
       });
-    req.query = { name: 'mar' };
+    req.query = { name: 'anything' };
     return { req, res };
   };
 

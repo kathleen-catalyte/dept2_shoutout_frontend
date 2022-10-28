@@ -48,7 +48,7 @@
 
 .magnifyingGlassWrapper {
   position: absolute;
-  left: .5rem;
+  left: 0.5rem;
   top: 51.5%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
