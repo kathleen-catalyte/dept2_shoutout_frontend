@@ -18,6 +18,8 @@ const UserProfile = (id: any) => {
   const { data, error } = useSWR(`/api/profile/${Object.values(id)[0]}`, fetch);
   const profileData = data as unknown as FullProfile;
   const [tabIndex, setTabIndex] = useState(0);
+  console.log(document?.referrer);
+  const prevPage = document?.referrer.toString()
 
   const handleTabChange = (event: any, newTabIndex: number) => {
     setTabIndex(newTabIndex);
@@ -49,7 +51,8 @@ const UserProfile = (id: any) => {
         >
           <a className={styles.hoverbutton}>
             <ArrowSmallLeftIcon className={styles.arrowIcon} />
-            <span className={styles.backToShoutOut}>Back to shoutouts</span>
+            {!prevPage.includes('/user') ? (<span className={styles.backToShoutOut}>Back to shoutouts</span>) : <span className={styles.backToShoutOut}>Back</span>}
+
           </a>
         </p>
         <div className={styles.profilePicture}>

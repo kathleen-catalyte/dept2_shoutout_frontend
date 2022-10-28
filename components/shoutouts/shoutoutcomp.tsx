@@ -24,21 +24,19 @@ const ShoutoutComp = (props: { shoutout: Shoutout }, key: number) => {
           {shoutout.elements?.map(
             (x: Element, idx: React.Key | null | undefined) => {
               return x.employeeId ? (
-                <Link key={idx} href={`/user/${x.employeeId}`}>
-                  <a className={styles.linkToProfile}>{` @${x.text} `}</a>
-                </Link>
+                <span key={idx} >
+                  <a href={`/user/${x.employeeId}`} className={styles.linkToProfile}>{` @${x.text} `}</a>
+                </span>
               ) : (
                 <a key={idx}>{` ${x.text}`}</a>
               );
             }
           )}
         </p>
-        <Link href={`/user/${shoutout.author.employeeId}`}>
-          <a className={styles.userName}>{`@${shoutout.author?.name}`}</a>
-        </Link>
+        <a href={`/user/${shoutout.author.employeeId}`} className={styles.userName}>{`@${shoutout.author?.name}`}</a>
         <span className={styles.subtext}>{`#${shoutout.channel?.id}`}</span>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 
