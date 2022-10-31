@@ -24,8 +24,15 @@ const UserProfile = (id: any) => {
     setTabIndex(newTabIndex);
   };
   const BackToHome = () => {
-    Router.back();
+    if (window?.history?.length > 1) {
+      Router.back();
+    }
+    Router.push('/');
   };
+  const noReferenceHome = () => {
+    sessionStorage.clear()
+    Router.push('/')
+  }
   const given = (shoutoutsGiven: Shoutout[]) => {
     const length = shoutoutsGiven.length;
     return "Given" + "(" + length + ")";
@@ -43,7 +50,7 @@ const UserProfile = (id: any) => {
     <div>
       <Logout />
       <div className={styles.profilePageContainer}>
-        <p
+        {prevPage != '' ? <p
           data-testid="back"
           className={styles.backButton}
           onClick={BackToHome}
@@ -53,7 +60,17 @@ const UserProfile = (id: any) => {
             {!prevPage.includes('/user') ? (<span className={styles.backToShoutOut}>Back to shoutouts</span>) : <span className={styles.backToShoutOut}>Back</span>}
 
           </a>
-        </p>
+        </p> : <p
+          data-testid="back"
+          className={styles.backButton}
+          onClick={noReferenceHome}
+        >
+          <a className={styles.hoverbutton}>
+            <ArrowSmallLeftIcon className={styles.arrowIcon} />
+            <span className={styles.backToShoutOut}>Back to shoutouts</span>
+          </a>
+        </p>}
+
         <div className={styles.profilePicture}>
           {profileData.image192 ? (
             <div className={styles.picture}>
