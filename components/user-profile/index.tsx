@@ -19,13 +19,15 @@ const UserProfile = (id: any) => {
   const profileData = data as unknown as FullProfile;
   const [tabIndex, setTabIndex] = useState(0);
   const prevPage = document?.referrer.toString()
-  console.log(prevPage)
 
   const handleTabChange = (event: any, newTabIndex: number) => {
     setTabIndex(newTabIndex);
   };
   const BackToHome = () => {
-    Router.back();
+    if (window?.history?.length > 1) {
+      Router.back();
+    }
+    Router.push('/');
   };
   const noReferenceHome = () => {
     sessionStorage.clear()
